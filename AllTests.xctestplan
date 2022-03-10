@@ -1,0 +1,56 @@
+{
+  "configurations" : [
+    {
+      "id" : "BC448D84-49F3-42A3-AF37-A2AC474EC897",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Kurlyk.xcodeproj",
+      "identifier" : "F855B2E44F867E0ADD65FA3A",
+      "name" : "Kurlyk"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Kurlyk.xcodeproj",
+        "identifier" : "F500988C44A57EE19D8678F8",
+        "name" : "KurlykTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Kurlyk.xcodeproj",
+        "identifier" : "A8B94E9536D3A5C91B172555",
+        "name" : "AuthenticationFeatureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:ComponentsKit",
+        "identifier" : "ComponentsKitTests",
+        "name" : "ComponentsKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:DesignSystem",
+        "identifier" : "DesignSystemTests",
+        "name" : "DesignSystemTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Domain",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    }
+  ],
+  "version" : 1
+}

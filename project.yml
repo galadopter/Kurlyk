@@ -10,6 +10,7 @@ options:
 
 fileGroups:
   - project.yml
+  - AllTests.xctestplan
       
 settings:
   base:
@@ -19,6 +20,14 @@ packages:
   ComposableArchitecture:
     url: https://github.com/pointfreeco/swift-composable-architecture
     from: 0.28.1
+  AuthenticationFeature:
+    path: AuthenticationFeature
+  DesignSystem:
+    path: DesignSystem
+  ComponentsKit:
+    path: ComponentsKit
+  Domain:
+    path: Domain
 
 targets:
 
@@ -39,14 +48,11 @@ targets:
         BUNDLE_VERSION: "0"
         
     dependencies:
-      - target: AuthenticationFeature
-      
-#      - package: ComposableArchitecture
+      - package: AuthenticationFeature
       
     scheme:
-      testTargets:
-        - KurlykTests
-        - DomainTests
+      testPlan:
+        - AllTests
       gatherCoverageData: true
   
   # Tests for main app.
@@ -61,57 +67,58 @@ targets:
   # -- FEATURES --
   
   # Authentication Feature
-  AuthenticationFeature:
-    platform: iOS
-    type: framework
-    sources: [AuthenticationFeature/Sources]
-    info:
-      path: AuthenticationFeature/Sources/Framework/Info.plist
-    dependencies:
-      - target: UIComponents
-      
-  AuthenticationFeatureTests:
-    platform: iOS
-    type: bundle.unit-test
-    sources: [AuthenticationFeature/Tests]
-    settings:
-      base:
-        SWIFT_OBJC_BRIDGING_HEADER: Domain/Tests/AuthenticationFeatureTests-Bridging-Header
-    dependencies:
-      - target: AuthenticationFeature
+#  AuthenticationFeature:
+#    platform: iOS
+#    type: framework
+#    sources: [AuthenticationFeature/Sources]
+#    info:
+#      path: AuthenticationFeature/Sources/Framework/Info.plist
+#    dependencies:
+#      - package: ComponentsKit
+#
+#  AuthenticationFeatureTests:
+#    platform: iOS
+#    type: bundle.unit-test
+#    sources: [AuthenticationFeature/Tests]
+#    settings:
+#      base:
+#        SWIFT_OBJC_BRIDGING_HEADER: AuthenticationFeature/Tests/AuthenticationFeatureTests-Bridging-Header.h
+#    dependencies:
+#      - target: AuthenticationFeature
 
       
   # UI Components. Here you can find UI components which can be reused across multiple features.
-  UIComponents:
-    platform: iOS
-    type: framework
-    sources: [UIComponents/Sources]
-    info:
-      path: UIComponents/Sources/Framework/Info.plist
-    dependencies:
-      - target: Domain
-      - package: ComposableArchitecture
+#  UIComponents:
+#    platform: iOS
+#    type: framework
+#    sources: [UIComponents/Sources]
+#    info:
+#      path: UIComponents/Sources/Framework/Info.plist
+#    dependencies:
+#      - target: Domain
+#      - package: ComposableArchitecture
+#      - package: DesignSystem
 
 
   # Domain level. Here you can find domain models, abstract use cases and some useful tools.
-  Domain:
-    platform: iOS
-    type: framework
-    sources: [Domain/Sources]
-    info:
-      path: Domain/Sources/Framework/Info.plist
-
-  # Tests for Domain level.
-  DomainTests:
-    platform: iOS
-    type: bundle.unit-test
-    sources: [Domain/Tests]
-    settings:
-      base:
-        SWIFT_OBJC_BRIDGING_HEADER: Domain/Tests/DomainTests-Bridging-Header.h
-    dependencies:
-      - target: Domain
-      - framework: Carthage/Build/Nimble.xcframework
-      - framework: Carthage/Build/Quick.xcframework
+#  Domain:
+#    platform: iOS
+#    type: framework
+#    sources: [Domain/Sources]
+#    info:
+#      path: Domain/Sources/Framework/Info.plist
+#
+#  # Tests for Domain level.
+#  DomainTests:
+#    platform: iOS
+#    type: bundle.unit-test
+#    sources: [Domain/Tests]
+#    settings:
+#      base:
+#        SWIFT_OBJC_BRIDGING_HEADER: Domain/Tests/DomainTests-Bridging-Header.h
+#    dependencies:
+#      - target: Domain
+#      - framework: Carthage/Build/Nimble.xcframework
+#      - framework: Carthage/Build/Quick.xcframework
     
     
