@@ -62,7 +62,7 @@ private extension LoginView {
     }
     
     var loginButton: some View {
-        FilledButton(title: "Login") {
+        PrimaryButton(title: "Login") {
             viewStore.send(.login)
         }.disabled(!viewStore.isFormValid)
         .padding()

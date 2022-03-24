@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Additional View methods
 public extension View {
     
     func foregroundColor(_ color: Color) -> some View {
@@ -18,6 +19,7 @@ public extension View {
     }
 }
 
+// MARK: - SwiftUI Color extension
 extension SwiftUI.Color {
     
     static func design(_ color: Color) -> SwiftUI.Color {

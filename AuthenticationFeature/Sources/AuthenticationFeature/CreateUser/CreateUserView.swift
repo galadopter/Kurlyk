@@ -98,7 +98,7 @@ private extension CreateUserView {
     }
     
     var createUserButton: some View {
-        FilledButton(title: "Create user") {
+        PrimaryButton(title: "Create user") {
             viewStore.send(.createUser)
         }.disabled(!viewStore.isFormValid)
         .id(createUserButtonID)

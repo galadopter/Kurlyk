@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,20 +31,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		036CEDDB5CDA84343D3543CC /* AuthenticationFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AuthenticationFeature; path = AuthenticationFeature; sourceTree = SOURCE_ROOT; };
+		036CEDDB5CDA84343D3543CC /* AuthenticationFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AuthenticationFeature; sourceTree = SOURCE_ROOT; };
 		12C159DFC20751D57E99B40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		1744F60E1DBB63379974E937 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DesignSystem; path = DesignSystem; sourceTree = SOURCE_ROOT; };
+		1744F60E1DBB63379974E937 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DesignSystem; sourceTree = SOURCE_ROOT; };
 		2B07BF904A56F4EEEB4DE9CA /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
 		2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3907E3E09A18B39836D36B3E /* Kurlyk.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kurlyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		43BC24398EB29B8BF6312848 /* AllTests.xctestplan */ = {isa = PBXFileReference; path = AllTests.xctestplan; sourceTree = "<group>"; };
+		43BC24398EB29B8BF6312848 /* AllTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllTests.xctestplan; sourceTree = "<group>"; };
 		74658F2B73716E4BE177CA4A /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
-		74DF538F7E70208FECF68F75 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Domain; sourceTree = SOURCE_ROOT; };
+		74DF538F7E70208FECF68F75 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = SOURCE_ROOT; };
 		7AC0AF9D0AE475493B8E2C36 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8126799005F7427F5A5A26D0 /* KurlykApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlykApp.swift; sourceTree = "<group>"; };
 		97680F117FC4940C62BAEBFB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		9F31C209F7E53CBB368860BB /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ComponentsKit; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
+		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
 		B6256A629A02FAD982FCB575 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D82A843A1BB69F091169827C /* KurlykTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KurlykTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98090A62B4549770E0245C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +124,13 @@
 			name = Packages;
 			sourceTree = SOURCE_ROOT;
 		};
+		7BCF0DBA27ECAAE200E95C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9298348C732C68BCB7B56CAD /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +155,7 @@
 				09CD6CBFF65FD1B9A796F61B /* Kurlyk */,
 				48B72D4BF29F7FF2C9AF2810 /* Packages */,
 				32F909E5CCF17E33FBCE5B71 /* Products */,
+				7BCF0DBA27ECAAE200E95C07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

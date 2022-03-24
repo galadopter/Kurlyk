@@ -47,14 +47,14 @@ struct WelcomeView: View {
     }
     
     var login: some View {
-        FilledButton(title: "Login") {
+        PrimaryButton(title: "Login") {
             viewStore.send(.loginTapped)
         }
             .padding(.horizontal, 16)
     }
     
     var createUser: some View {
-        FilledButton(title: "Create user") {
+        SecondaryButton(title: "Create user") {
             viewStore.send(.createUserTapped)
         }
             .padding(.horizontal, 16)
