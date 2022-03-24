@@ -40,6 +40,21 @@ public struct Color {
     }
 }
 
+// MARK: - Modifiers
+public extension Color {
+    
+    /// Adjusts given color by given percentage.
+    ///
+    /// - Parameter byPercentage: Percentage by which color is adjusted. Possible values: -100...100.
+    func adjusted(byPercentage percentage: Float) -> Color {
+        .init(
+            red: min(red + (percentage / 100), 1),
+            green: min(green + (percentage / 100), 1),
+            blue: min(blue + (percentage / 100), 1)
+        )
+    }
+}
+
 // MARK: UIKit
 public extension Color {
     

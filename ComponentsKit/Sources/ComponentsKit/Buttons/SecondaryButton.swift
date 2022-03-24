@@ -40,6 +40,8 @@ extension SecondaryButton: View {
 
 struct SecondaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        SecondaryButton(title: "Change locale", action: {})
+        SecondaryButton(title: "Change locale", action: {
+            Theme.default.update(keyPath: \.sizes.xxs, withValue: 16)
+        })
     }
 }

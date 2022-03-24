@@ -14,6 +14,8 @@ public struct PrimaryButtonStyle: ButtonStyle {
     
     public let backgroundColor: Color
     
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    
     public init(
         foregroundColor: Color,
         backgroundColor: Color
@@ -26,11 +28,12 @@ public struct PrimaryButtonStyle: ButtonStyle {
         HStack {
             Spacer()
             configuration.label
-                .foregroundColor(foregroundColor)
+                .foregroundColor(configuration.pressed(color: foregroundColor))
             Spacer()
         }
             .padding()
-            .background(backgroundColor)
+            .background(configuration.pressed(color: backgroundColor))
+            .opacity(isEnabled ? 1 : 0.5)
             .clipShape(Capsule())
     }
 }

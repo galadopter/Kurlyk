@@ -30,13 +30,13 @@ public struct SecondaryButtonStyle: ButtonStyle {
         HStack {
             Spacer()
             configuration.label
-                .foregroundColor(foregroundColor)
+                .foregroundColor(configuration.pressed(color: foregroundColor))
             Spacer()
         }
             .padding()
             .overlay(
                 Capsule(style: .continuous)
-                    .stroke(borderColor.swiftUIColor, style: .init(lineWidth: borderWidth))
+                    .stroke(configuration.pressed(color: borderColor).swiftUIColor, style: .init(lineWidth: borderWidth))
             )
     }
 }
