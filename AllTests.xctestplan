@@ -25,13 +25,6 @@
     },
     {
       "target" : {
-        "containerPath" : "container:Kurlyk.xcodeproj",
-        "identifier" : "A8B94E9536D3A5C91B172555",
-        "name" : "AuthenticationFeatureTests"
-      }
-    },
-    {
-      "target" : {
         "containerPath" : "container:ComponentsKit",
         "identifier" : "ComponentsKitTests",
         "name" : "ComponentsKitTests"
@@ -42,6 +35,13 @@
         "containerPath" : "container:DesignSystem",
         "identifier" : "DesignSystemTests",
         "name" : "DesignSystemTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:AuthenticationFeature",
+        "identifier" : "AuthenticationFeatureTests",
+        "name" : "AuthenticationFeatureTests"
       }
     },
     {

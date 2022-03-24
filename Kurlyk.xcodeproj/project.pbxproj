@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FFFA5E0764505AD8008B11E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6256A629A02FAD982FCB575 /* AppState.swift */; };
+		3323BFA01FC63338C94D561C /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97680F117FC4940C62BAEBFB /* AppEnvironment.swift */; };
+		335CF55F3EEC255A4EA68DA7 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F31C209F7E53CBB368860BB /* AppReducer.swift */; };
+		684098D773CC8396139D79C3 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74658F2B73716E4BE177CA4A /* AppAction.swift */; };
+		6DFDD2DE478DE20B5D328361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98090A62B4549770E0245C4 /* Assets.xcassets */; };
+		74A3670698CEDBCDC7C37CDA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */; };
+		7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0AF9D0AE475493B8E2C36 /* AppView.swift */; };
+		9F231F55BA9A8C9ADE3EE362 /* KurlykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F2E92BC7A6AAFED67E9FF /* KurlykTests.swift */; };
+		AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */; };
+		BB6647B93731DE66E59A47C0 /* KurlykApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126799005F7427F5A5A26D0 /* KurlykApp.swift */; };
+		E7FDA1C0A68C235CCF0B5E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C4D035169E50D1216CBDA7 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F20802CBBCBB59DD696838A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3739C1908CA6CBC8381E56E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F855B2E44F867E0ADD65FA3A;
+			remoteInfo = Kurlyk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		036CEDDB5CDA84343D3543CC /* AuthenticationFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AuthenticationFeature; path = AuthenticationFeature; sourceTree = SOURCE_ROOT; };
+		12C159DFC20751D57E99B40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1744F60E1DBB63379974E937 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DesignSystem; path = DesignSystem; sourceTree = SOURCE_ROOT; };
+		2B07BF904A56F4EEEB4DE9CA /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3907E3E09A18B39836D36B3E /* Kurlyk.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kurlyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43BC24398EB29B8BF6312848 /* AllTests.xctestplan */ = {isa = PBXFileReference; path = AllTests.xctestplan; sourceTree = "<group>"; };
+		74658F2B73716E4BE177CA4A /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		74DF538F7E70208FECF68F75 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Domain; path = Domain; sourceTree = SOURCE_ROOT; };
+		7AC0AF9D0AE475493B8E2C36 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		8126799005F7427F5A5A26D0 /* KurlykApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlykApp.swift; sourceTree = "<group>"; };
+		97680F117FC4940C62BAEBFB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		9F31C209F7E53CBB368860BB /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ComponentsKit; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
+		B6256A629A02FAD982FCB575 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D82A843A1BB69F091169827C /* KurlykTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KurlykTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98090A62B4549770E0245C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2C4D035169E50D1216CBDA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD7F2E92BC7A6AAFED67E9FF /* KurlykTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlykTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DB3F778405CB02E83AECFB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09CD6CBFF65FD1B9A796F61B /* Kurlyk */ = {
+			isa = PBXGroup;
+			children = (
+				373E155B396CE37ADC916B1C /* Sources */,
+				98C774AD7670126E5A617FD4 /* Tests */,
+			);
+			path = Kurlyk;
+			sourceTree = "<group>";
+		};
+		3095223C6F9F72575CEA8941 /* AppView */ = {
+			isa = PBXGroup;
+			children = (
+				74658F2B73716E4BE177CA4A /* AppAction.swift */,
+				97680F117FC4940C62BAEBFB /* AppEnvironment.swift */,
+				9F31C209F7E53CBB368860BB /* AppReducer.swift */,
+				B6256A629A02FAD982FCB575 /* AppState.swift */,
+				7AC0AF9D0AE475493B8E2C36 /* AppView.swift */,
+			);
+			path = AppView;
+			sourceTree = "<group>";
+		};
+		32F909E5CCF17E33FBCE5B71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3907E3E09A18B39836D36B3E /* Kurlyk.app */,
+				D82A843A1BB69F091169827C /* KurlykTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		373E155B396CE37ADC916B1C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3CE412FF593422D3D3909E1D /* Application */,
+				A4A567112946900B12C4ECF7 /* Resources */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3CE412FF593422D3D3909E1D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				12C159DFC20751D57E99B40A /* Info.plist */,
+				8126799005F7427F5A5A26D0 /* KurlykApp.swift */,
+				3095223C6F9F72575CEA8941 /* AppView */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		48B72D4BF29F7FF2C9AF2810 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				036CEDDB5CDA84343D3543CC /* AuthenticationFeature */,
+				B07572FFB0F57DD3A7E3B97B /* ComponentsKit */,
+				1744F60E1DBB63379974E937 /* DesignSystem */,
+				74DF538F7E70208FECF68F75 /* Domain */,
+			);
+			name = Packages;
+			sourceTree = SOURCE_ROOT;
+		};
+		9298348C732C68BCB7B56CAD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2C4D035169E50D1216CBDA7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98C774AD7670126E5A617FD4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F2E92BC7A6AAFED67E9FF /* KurlykTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		99DA93C5594A266CCFDD0365 = {
+			isa = PBXGroup;
+			children = (
+				43BC24398EB29B8BF6312848 /* AllTests.xctestplan */,
+				2B07BF904A56F4EEEB4DE9CA /* project.yml */,
+				09CD6CBFF65FD1B9A796F61B /* Kurlyk */,
+				48B72D4BF29F7FF2C9AF2810 /* Packages */,
+				32F909E5CCF17E33FBCE5B71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4A567112946900B12C4ECF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D98090A62B4549770E0245C4 /* Assets.xcassets */,
+				2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */,
+				9298348C732C68BCB7B56CAD /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F500988C44A57EE19D8678F8 /* KurlykTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785C81BD3ABE3C49563A73A7 /* Build configuration list for PBXNativeTarget "KurlykTests" */;
+			buildPhases = (
+				589AC03DA34A872D4FC23CF8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E199445231A37A74BAD4E6B /* PBXTargetDependency */,
+			);
+			name = KurlykTests;
+			productName = KurlykTests;
+			productReference = D82A843A1BB69F091169827C /* KurlykTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F855B2E44F867E0ADD65FA3A /* Kurlyk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B17CD02A5EF98F58A9DBC3EA /* Build configuration list for PBXNativeTarget "Kurlyk" */;
+			buildPhases = (
+				688B05BFB6CCE694225C885C /* Sources */,
+				96565B32F9CDEAC7ADB8EA13 /* Resources */,
+				6DB3F778405CB02E83AECFB9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kurlyk;
+			packageProductDependencies = (
+				005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */,
+			);
+			productName = Kurlyk;
+			productReference = 3907E3E09A18B39836D36B3E /* Kurlyk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3739C1908CA6CBC8381E56E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					F500988C44A57EE19D8678F8 = {
+						DevelopmentTeam = YA3F4FB73R;
+					};
+					F855B2E44F867E0ADD65FA3A = {
+						DevelopmentTeam = YA3F4FB73R;
+					};
+				};
+			};
+			buildConfigurationList = EFE956BC37E6840D9D30A592 /* Build configuration list for PBXProject "Kurlyk" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 99DA93C5594A266CCFDD0365;
+			packageReferences = (
+				AA4799E80FD02C53AAB1A4F7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F855B2E44F867E0ADD65FA3A /* Kurlyk */,
+				F500988C44A57EE19D8678F8 /* KurlykTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96565B32F9CDEAC7ADB8EA13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DFDD2DE478DE20B5D328361 /* Assets.xcassets in Resources */,
+				74A3670698CEDBCDC7C37CDA /* Launch Screen.storyboard in Resources */,
+				E7FDA1C0A68C235CCF0B5E12 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		589AC03DA34A872D4FC23CF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F231F55BA9A8C9ADE3EE362 /* KurlykTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		688B05BFB6CCE694225C885C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				684098D773CC8396139D79C3 /* AppAction.swift in Sources */,
+				3323BFA01FC63338C94D561C /* AppEnvironment.swift in Sources */,
+				335CF55F3EEC255A4EA68DA7 /* AppReducer.swift in Sources */,
+				0FFFA5E0764505AD8008B11E /* AppState.swift in Sources */,
+				7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */,
+				BB6647B93731DE66E59A47C0 /* KurlykApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E199445231A37A74BAD4E6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F855B2E44F867E0ADD65FA3A /* Kurlyk */;
+			targetProxy = 3F20802CBBCBB59DD696838A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FDB620286FB2309015C9AFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_SHORT_VERSION = 1.0.0;
+				BUNDLE_VERSION = 0;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Kurlyk/Sources/Application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test-apps.Kurlyk";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		12CA6354714BA4015613A330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = YA3F4FB73R;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3E6EF08524F1F7F311A0939C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_SHORT_VERSION = 1.0.0;
+				BUNDLE_VERSION = 0;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Kurlyk/Sources/Application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test-apps.Kurlyk";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		796DED1C388C024E5D0C4C81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test-apps.KurlykTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kurlyk.app/Kurlyk";
+			};
+			name = Debug;
+		};
+		DE1D7B91CA8B4A8AEFD3D90E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test-apps.KurlykTests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kurlyk.app/Kurlyk";
+			};
+			name = Release;
+		};
+		E64BC7AD93F993106BA0F6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = YA3F4FB73R;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		785C81BD3ABE3C49563A73A7 /* Build configuration list for PBXNativeTarget "KurlykTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				796DED1C388C024E5D0C4C81 /* Debug */,
+				DE1D7B91CA8B4A8AEFD3D90E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B17CD02A5EF98F58A9DBC3EA /* Build configuration list for PBXNativeTarget "Kurlyk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDB620286FB2309015C9AFA /* Debug */,
+				3E6EF08524F1F7F311A0939C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFE956BC37E6840D9D30A592 /* Build configuration list for PBXProject "Kurlyk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E64BC7AD93F993106BA0F6B4 /* Debug */,
+				12CA6354714BA4015613A330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA4799E80FD02C53AAB1A4F7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.28.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AuthenticationFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3739C1908CA6CBC8381E56E4 /* Project object */;
+}

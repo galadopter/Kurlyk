@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "AuthenticationFeature",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -12,17 +15,27 @@ let package = Package(
             targets: ["AuthenticationFeature"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(path: "../DesignSystem"),
+        .package(path: "../Domain"),
+        .package(path: "../ComponentsKit"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.28.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "AuthenticationFeature",
-            dependencies: []),
+            dependencies: [
+                "Domain",
+                "DesignSystem",
+                "ComponentsKit",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+            ]),
         .testTarget(
             name: "AuthenticationFeatureTests",
-            dependencies: ["AuthenticationFeature"]),
+            dependencies: [
+                "AuthenticationFeature",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+            ]),
     ]
 )
