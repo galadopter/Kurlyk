@@ -44,7 +44,7 @@ extension LoginView: View {
 private extension LoginView {
     
     var emailField: some View {
-        NamedField(title: "Email", prompt: "Enter your email here",
+        NamedField(title: "Email", prompt: "test@example.com",
                    text: viewStore.binding(\.$email))
             .focused($focusedField, equals: .email)
             .onSubmit {

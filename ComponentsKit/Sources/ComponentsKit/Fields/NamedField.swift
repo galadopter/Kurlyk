@@ -38,6 +38,6 @@ public struct NamedField: View {
 
 struct NamedField_Previews: PreviewProvider {
     static var previews: some View {
-        NamedField(title: "", prompt: "", text: .constant(""))
+        NamedField(title: "Name", prompt: "Enter name", text: .constant(""))
     }
 }
