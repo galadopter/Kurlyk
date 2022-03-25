@@ -16,4 +16,7 @@ public protocol ThemeProvider {
     
     /// Collection of sizes in theme
     var sizes: Theme.Sizes { get set }
+    
+    /// Collection of fonts in theme
+    var fonts: Theme.Fonts { get set }
 }

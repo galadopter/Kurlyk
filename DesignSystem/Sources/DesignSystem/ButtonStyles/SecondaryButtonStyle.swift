@@ -16,6 +16,8 @@ public struct SecondaryButtonStyle: ButtonStyle {
     
     public let borderWidth: CGFloat
     
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    
     public init(
         foregroundColor: Color,
         borderColor: Color,
@@ -38,5 +40,6 @@ public struct SecondaryButtonStyle: ButtonStyle {
                 Capsule(style: .continuous)
                     .stroke(configuration.pressed(color: borderColor).swiftUIColor, style: .init(lineWidth: borderWidth))
             )
+            .opacity(isEnabled ? 1 : 0.5)
     }
 }

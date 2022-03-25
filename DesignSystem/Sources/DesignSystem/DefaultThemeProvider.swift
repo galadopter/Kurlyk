@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public struct DefaultThemeProvider: ThemeProvider {
     
@@ -18,11 +19,15 @@ public struct DefaultThemeProvider: ThemeProvider {
     /// Default values for sizes
     public var sizes: Theme.Sizes
     
+    /// Default values for fonts
+    public var fonts: Theme.Fonts
+    
     /// Sets the default values to the theme provider.
     public init() {
         colors = Self.defaultColors()
         sizes = Self.defaultSizes()
         buttonStyles = Self.defaultButtonStyles(colors: colors, sizes: sizes)
+        fonts = Self.defaultFonts()
     }
 }
 
@@ -67,6 +72,14 @@ private extension DefaultThemeProvider {
             lg: 24,
             xl: 32,
             xxl: 48
+        )
+    }
+    
+    static func defaultFonts() -> Theme.Fonts {
+        .init(
+            defaultFont: { style, weight in
+                .system(style).weight(weight)
+            }
         )
     }
 }
