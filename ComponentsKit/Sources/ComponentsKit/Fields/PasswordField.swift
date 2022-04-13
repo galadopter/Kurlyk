@@ -1,22 +1,23 @@
 //
-//  NamedField.swift
-//  Kurlyk
+//  File.swift
+//  
 //
-//  Created by Yan Schneider on 23.11.21.
+//  Created by Yan Schnaider on 06/04/2022.
 //
 
 import SwiftUI
 import DesignSystem
 
-/// Field with large title on top. It doesn't have any background.
+/// Secure field with large title on top. It doesn't have any background.
 ///
-/// It's could be used to gather information from user in any type of forms.
-public struct NamedField: View {
+/// It's should be used to gather passwords.
+public struct PasswordField: View {
+    
     let title: String
     let prompt: String
     @Binding var text: String
     
-    ///  Initializer for named field
+    ///  Initializer for password field
     ///
     ///  - Parameter title: Field's title, displayed on top with a `title` font style
     ///  - Parameter prompt: Placeholder for the textfield
@@ -26,7 +27,7 @@ public struct NamedField: View {
         self.prompt = prompt
         self._text = text
     }
-    
+
     public var body: some View {
         VStack(spacing: Theme.default.sizes.sm) {
             HStack {
@@ -37,7 +38,7 @@ public struct NamedField: View {
                 .padding(.horizontal, Theme.default.sizes.md)
                 .padding(.top, Theme.default.sizes.sm)
             
-            TextField(prompt, text: $text)
+            SecureField(prompt, text: $text)
                 .frame(height: 40)
                 .font(Theme.default.fonts.defaultFont(.body, .medium))
                 .padding(.horizontal, Theme.default.sizes.md)
@@ -45,8 +46,8 @@ public struct NamedField: View {
     }
 }
 
-struct NamedField_Previews: PreviewProvider {
+struct PasswordField_Previews: PreviewProvider {
     static var previews: some View {
-        NamedField(title: "Name", prompt: "Enter name", text: .constant(""))
+        PasswordField(title: "Password", prompt: "•••••••••", text: .constant(""))
     }
 }

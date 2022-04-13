@@ -19,7 +19,7 @@ public struct DefaultThemeProvider: ThemeProvider {
     /// Default values for sizes
     public var sizes: Theme.Sizes
     
-    /// Default values for fonts
+    /// Default values for fonts. The system font is used.
     public var fonts: Theme.Fonts
     
     /// Sets the default values to the theme provider.
@@ -53,11 +53,11 @@ private extension DefaultThemeProvider {
         .init(
             primary: .init(
                 foregroundColor: colors.text.primary,
-                backgroundColor: colors.background
+                backgroundColor: colors.primary
             ),
             secondary: .init(
                 foregroundColor: colors.text.secondary,
-                borderColor: colors.background,
+                borderColor: colors.primary,
                 borderWidth: sizes.xxs
             )
         )

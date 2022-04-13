@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComponentsKit
+import DesignSystem
 import ComposableArchitecture
 
 struct CreateUserView {
@@ -33,28 +34,20 @@ extension CreateUserView: View {
     
     var body: some View {
         ScrollView {
-            ZStack {
-                VStack {
-                    nameField
-                    emailField
-                    passwordField
-                    confirmPasswordField
-                    Spacer()
-                    createUserButton
-                    navigation
-                }
-                if viewStore.isCreatingUser {
-                    loadingView
-                }
+            VStack {
+                nameField
+                emailField
+                passwordField
+                confirmPasswordField
+                Spacer()
+                createUserButton
+                navigation
             }
         }
             .navigationBarTitleDisplayMode(.inline)
+            .loader(isLoading: viewStore.isCreatingUser)
             .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
-                    focusedField = .name
-                }
-            }
+            .background(Theme.default.colors.background)
     }
 }
 
@@ -73,6 +66,8 @@ private extension CreateUserView {
     var emailField: some View {
         NamedField(title: "Email", prompt: "Enter your email here",
                    text: viewStore.binding(\.$email))
+            .keyboardType(.emailAddress)
+            .textInputAutocapitalization(.never)
             .focused($focusedField, equals: .email)
             .onSubmit {
                 focusedField = .password
@@ -80,8 +75,8 @@ private extension CreateUserView {
     }
     
     var passwordField: some View {
-        NamedField(title: "Password", prompt: "Enter your password here",
-                   text: viewStore.binding(\.$password))
+        PasswordField(title: "Password", prompt: "Enter your password here",
+                      text: viewStore.binding(\.$password))
             .focused($focusedField, equals: .password)
             .onSubmit {
                 focusedField = .confirmPassword
@@ -89,8 +84,8 @@ private extension CreateUserView {
     }
     
     var confirmPasswordField: some View {
-        NamedField(title: "Confirm Password", prompt: "Confirm your password here",
-                   text: viewStore.binding(\.$confirmPassword))
+        PasswordField(title: "Confirm Password", prompt: "Confirm your password here",
+                      text: viewStore.binding(\.$confirmPassword))
             .focused($focusedField, equals: .confirmPassword)
             .onSubmit {
                 viewStore.send(.createUser)

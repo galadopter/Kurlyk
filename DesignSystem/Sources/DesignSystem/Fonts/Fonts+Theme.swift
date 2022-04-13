@@ -9,8 +9,9 @@ import SwiftUI
 
 extension Theme {
     
+    /// Fonts in particular theme
     public struct Fonts {
-        
+        /// Default font
         public var defaultFont: (Font.TextStyle, Font.Weight) -> Font
     }
 }
