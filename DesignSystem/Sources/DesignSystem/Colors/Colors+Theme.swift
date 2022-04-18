@@ -17,11 +17,15 @@ extension Theme {
         /// Text colors
         public var text: Text
         
+        /// Navigation color.
+        public var navigation: Color
+        
         /// Background color
         public var background: Color
     }
 }
 
+// MARK: - Text colors
 extension Theme.Colors {
     
     /// Text colors
@@ -31,5 +35,8 @@ extension Theme.Colors {
         
         /// Secondary text color
         public var secondary: Color
+        
+        /// Placeholder text color
+        public var placeholder: Color
     }
 }

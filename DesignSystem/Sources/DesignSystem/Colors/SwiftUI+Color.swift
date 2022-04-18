@@ -10,12 +10,16 @@ import SwiftUI
 // MARK: - Additional View methods
 public extension View {
     
-    func foregroundColor(_ color: Color) -> some View {
+    @inlinable func foregroundColor(_ color: Color) -> some View {
         foregroundColor(color.swiftUIColor)
     }
-    
-    func background(_ color: Color) -> some View {
+
+    @inlinable func background(_ color: Color) -> some View {
         background(color.swiftUIColor)
+    }
+    
+    @inlinable func accentColor(_ color: Color) -> some View {
+        accentColor(color.swiftUIColor)
     }
 }
 

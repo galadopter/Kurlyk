@@ -14,17 +14,21 @@ import DesignSystem
 /// It's better to not use a lot of primary button in one view.
 public struct PrimaryButton {
     let title: String
+    let showLoading: Bool
     let action: () -> ()
     
     /// Initializer for primary button
     ///
     /// - Parameter title: Title of the button
+    /// - Parameter showLoading: Controls loader visibility. 
     /// - Parameter action: Action that is performed on button press
     public init(
         title: String,
+        showLoading: Bool = false,
         action: @escaping () -> ()
     ) {
         self.title = title
+        self.showLoading = showLoading
         self.action = action
     }
 }
@@ -35,6 +39,7 @@ extension PrimaryButton: View {
     public var body: some View {
         Button(title, action: action)
             .buttonStyle(Theme.default.buttonStyles.primary)
+            .loader(isLoading: showLoading)
     }
 }
 

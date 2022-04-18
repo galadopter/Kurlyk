@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DesignSystem
 import ComponentsKit
 import ComposableArchitecture
 
@@ -35,8 +36,10 @@ extension LoginView: View {
             passwordField
             Spacer()
             loginButton
+            navigation
         }
             .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
+            .background(Theme.default.colors.background)
     }
 }
 
@@ -44,8 +47,12 @@ extension LoginView: View {
 private extension LoginView {
     
     var emailField: some View {
-        NamedField(title: "Email", prompt: "test@example.com",
-                   text: viewStore.binding(\.$email))
+        NamedField(
+            title: "Email", prompt: "test@example.com",
+            text: viewStore.binding(\.$email)
+        )
+            .keyboardType(.emailAddress)
+            .textInputAutocapitalization(.never)
             .focused($focusedField, equals: .email)
             .onSubmit {
                 focusedField = .password
@@ -53,19 +60,31 @@ private extension LoginView {
     }
     
     var passwordField: some View {
-        NamedField(title: "Password", prompt: "Enter your password here",
-                   text: viewStore.binding(\.$password))
+        PasswordField(title: "Password", prompt: "Enter your password here",
+                      text: viewStore.binding(\.$password))
             .focused($focusedField, equals: .password)
             .onSubmit {
-                print("S")
+                viewStore.send(.login)
             }
     }
     
     var loginButton: some View {
-        PrimaryButton(title: "Login") {
+        PrimaryButton(title: "Login", showLoading: viewStore.isLoading) {
             viewStore.send(.login)
         }.disabled(!viewStore.isFormValid)
         .padding()
+    }
+}
+
+// MARK: - Navigation
+extension LoginView {
+    
+    var navigation: some View {
+        NavigationLink(
+            destination: UserCreationSucceedView(),
+            isActive: viewStore.binding(\.$hasLoggedIn),
+            label: EmptyView.init
+        )
     }
 }
 

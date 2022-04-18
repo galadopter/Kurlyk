@@ -45,7 +45,6 @@ extension CreateUserView: View {
             }
         }
             .navigationBarTitleDisplayMode(.inline)
-            .loader(isLoading: viewStore.isCreatingUser)
             .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
             .background(Theme.default.colors.background)
     }
@@ -93,19 +92,14 @@ private extension CreateUserView {
     }
     
     var createUserButton: some View {
-        PrimaryButton(title: "Create user") {
+        PrimaryButton(
+            title: "Create user",
+            showLoading: viewStore.isCreatingUser
+        ) {
             viewStore.send(.createUser)
         }.disabled(!viewStore.isFormValid)
         .id(createUserButtonID)
         .padding()
-    }
-    
-    @ViewBuilder
-    var loadingView: some View {
-        Color.white
-            .opacity(0.6)
-            .blur(radius: 10)
-        ProgressView()
     }
 }
 

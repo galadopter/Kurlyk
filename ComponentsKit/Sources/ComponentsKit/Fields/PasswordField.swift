@@ -32,14 +32,17 @@ public struct PasswordField: View {
         VStack(spacing: Theme.default.sizes.sm) {
             HStack {
                 Text(title)
+                    .foregroundColor(Theme.default.colors.text.secondary)
                     .font(Theme.default.fonts.defaultFont(.title, .medium))
                 Spacer()
             }
                 .padding(.horizontal, Theme.default.sizes.md)
                 .padding(.top, Theme.default.sizes.sm)
             
-            SecureField(prompt, text: $text)
+            SecureField("", text: $text)
+                .placeholder(prompt, when: text.isEmpty)
                 .frame(height: 40)
+                .foregroundColor(Theme.default.colors.text.secondary)
                 .font(Theme.default.fonts.defaultFont(.body, .medium))
                 .padding(.horizontal, Theme.default.sizes.md)
         }

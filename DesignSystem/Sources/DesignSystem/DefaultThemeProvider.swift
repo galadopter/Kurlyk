@@ -39,9 +39,11 @@ private extension DefaultThemeProvider {
         .init(
             primary: .init(rgb: 0xfcd052),
             text: .init(
-                primary: .init(rgb: 0xffffff),
-                secondary: .init(rgb: 0x212121)
+                primary: .init(rgb: 0x212121),
+                secondary: .init(rgb: 0xffffff),
+                placeholder: .init(rgb: 0x7f7f7f)
             ),
+            navigation: .init(rgb: 0xf1f1f1),
             background: .init(rgb: 0x212121)
         )
     }
@@ -70,7 +72,7 @@ private extension DefaultThemeProvider {
             sm: 8,
             md: 16,
             lg: 24,
-            xl: 32,
+            xl: 36,
             xxl: 48
         )
     }

@@ -21,17 +21,24 @@ public enum AuthenticationAction: Equatable {
 public struct AuthenticationEnvironment {
     let mainQueue: AnySchedulerOf<DispatchQueue>
     let createUserGateway: CreateUserGateway
+    let getUserGateway: GetUserGateway
     
-    public init(mainQueue: AnySchedulerOf<DispatchQueue>, createUserGateway: CreateUserGateway) {
+    public init(
+        mainQueue: AnySchedulerOf<DispatchQueue>,
+        createUserGateway: CreateUserGateway,
+        getUserGateway: GetUserGateway
+    ) {
         self.mainQueue = mainQueue
         self.createUserGateway = createUserGateway
+        self.getUserGateway = getUserGateway
     }
 }
 
 public extension AuthenticationEnvironment {
     static let mock = AuthenticationEnvironment(
         mainQueue: .main,
-        createUserGateway: MockedCreateUserGateway()
+        createUserGateway: MockedCreateUserGateway(),
+        getUserGateway: MockedGetUserGateway()
     )
 }
 
@@ -39,6 +46,14 @@ struct MockedCreateUserGateway: CreateUserGateway {
     
     func create(user: User.Create) async throws {
         try await Task.sleep(nanoseconds: 2_000_000_000)
+    }
+}
+
+struct MockedGetUserGateway: GetUserGateway {
+    
+    func get(user: User.Get) async throws -> User {
+        try await Task.sleep(nanoseconds: 2_000_000_000)
+        return .init(email: "user@test.com", name: "Some Body", biography: "Test user")
     }
 }
 

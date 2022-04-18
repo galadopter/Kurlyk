@@ -21,8 +21,6 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         switch action {
         case .authentication:
             return .none
-        default:
-            return .none
         }
     }
 )
