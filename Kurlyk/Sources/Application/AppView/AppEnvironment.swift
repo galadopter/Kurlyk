@@ -19,16 +19,6 @@ extension AppEnvironment {
     )
     
     var authentication: AuthenticationEnvironment {
-        .init(
-            mainQueue: mainQueue,
-            createUserGateway: MockedCreateUserGateway()
-        )
-    }
-}
-
-struct MockedCreateUserGateway: CreateUserGateway {
-    
-    func create(user: User.Create) async throws {
-        try await Task.sleep(nanoseconds: 3_000_000_000)
+        .mock
     }
 }

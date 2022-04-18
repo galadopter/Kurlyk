@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import DesignSystem
 import ComponentsKit
 import ComposableArchitecture
 
-struct WelcomeView: View {
+struct WelcomeView {
     
     let store: Store<WelcomeState, WelcomeAction>
     
@@ -31,34 +32,48 @@ struct WelcomeView: View {
         self.store = store
         self.viewStore = ViewStore(store.scope(state: ViewState.init(state:)))
     }
+}
+
+// MARK: - View
+extension WelcomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 24) {
-                Text("Welcome to Kurlyk")
-                    .font(.title)
-                    .padding(.top, 36)
+            VStack(spacing: Theme.default.sizes.lg) {
+                welcomeTitle
                 Spacer()
                 login
                 createUser
                 navigation
             }
-        }
+            .background(Theme.default.colors.background)
+        }.accentColor(Theme.default.colors.navigation)
+    }
+}
+
+// MARK: - Components
+private extension WelcomeView {
+    
+    var welcomeTitle: some View {
+        Text("Welcome to Kurlyk")
+            .foregroundColor(Theme.default.colors.text.secondary)
+            .font(Theme.default.fonts.defaultFont(.title, .bold))
+            .padding(.top, Theme.default.sizes.xl)
     }
     
     var login: some View {
-        FilledButton(title: "Login") {
+        PrimaryButton(title: "Login") {
             viewStore.send(.loginTapped)
         }
-            .padding(.horizontal, 16)
+        .padding(.horizontal, Theme.default.sizes.md)
     }
     
     var createUser: some View {
-        FilledButton(title: "Create user") {
+        SecondaryButton(title: "Create user") {
             viewStore.send(.createUserTapped)
         }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 24)
+            .padding(.horizontal, Theme.default.sizes.md)
+            .padding(.bottom, Theme.default.sizes.lg)
     }
 }
 

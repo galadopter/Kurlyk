@@ -10,6 +10,12 @@ import Combine
 
 extension Effect {
     
+    /// Creates an `Effect` from non-failing async task.
+    ///
+    /// It could be cancelled during execution.
+    ///
+    /// - Parameter priority: Task's priority
+    /// - Parameter operation: Non-failing asynchronous operation
     public static func task(
       priority: TaskPriority? = nil,
       operation: @escaping @Sendable () async -> Output
@@ -27,6 +33,12 @@ extension Effect {
       .eraseToEffect()
     }
 
+    /// Creates an `Effect` from async task. This task can fail and raise an error.
+    ///
+    /// It could be cancelled during execution.
+    ///
+    /// - Parameter priority: Task's priority
+    /// - Parameter operation: Asynchronous operation
     public static func task(
       priority: TaskPriority? = nil,
       operation: @escaping @Sendable () async throws -> Output

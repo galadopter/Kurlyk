@@ -1,40 +1,33 @@
 //
-//  NamedField.swift
-//  Kurlyk
+//  File.swift
+//  
 //
-//  Created by Yan Schneider on 23.11.21.
+//  Created by Yan Schnaider on 06/04/2022.
 //
 
 import SwiftUI
 import DesignSystem
 
-/// Field with large title on top. It doesn't have any background.
+/// Secure field with large title on top. It doesn't have any background.
 ///
-/// It's could be used to gather information from user in any type of forms.
-public struct NamedField {
+/// It's should be used to gather passwords.
+public struct PasswordField: View {
+    
     let title: String
     let prompt: String
     @Binding var text: String
     
-    ///  Initializer for named field
+    ///  Initializer for password field
     ///
-    ///  - Parameter title: Field's title, displayed on top with a `title` font style.
-    ///  - Parameter prompt: Placeholder for the textfield.
-    ///  - Parameter text: Text binding.
-    public init(
-        title: String,
-        prompt: String,
-        text: Binding<String>
-    ) {
+    ///  - Parameter title: Field's title, displayed on top with a `title` font style
+    ///  - Parameter prompt: Placeholder for the textfield
+    ///  - Parameter text: Text binding
+    public init(title: String, prompt: String, text: Binding<String>) {
         self.title = title
         self.prompt = prompt
         self._text = text
     }
-}
 
-// MARK: - View
-extension NamedField: View {
-    
     public var body: some View {
         VStack(spacing: Theme.default.sizes.sm) {
             HStack {
@@ -46,7 +39,7 @@ extension NamedField: View {
                 .padding(.horizontal, Theme.default.sizes.md)
                 .padding(.top, Theme.default.sizes.sm)
             
-            TextField("", text: $text)
+            SecureField("", text: $text)
                 .placeholder(prompt, when: text.isEmpty)
                 .frame(height: 40)
                 .foregroundColor(Theme.default.colors.text.secondary)
@@ -56,8 +49,8 @@ extension NamedField: View {
     }
 }
 
-struct NamedField_Previews: PreviewProvider {
+struct PasswordField_Previews: PreviewProvider {
     static var previews: some View {
-        NamedField(title: "Name", prompt: "Enter name", text: .constant(""))
+        PasswordField(title: "Password", prompt: "•••••••••", text: .constant(""))
     }
 }
