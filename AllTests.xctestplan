@@ -50,6 +50,13 @@
         "identifier" : "DomainTests",
         "name" : "DomainTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MoviesListFeature",
+        "identifier" : "MoviesListFeatureTests",
+        "name" : "MoviesListFeatureTests"
+      }
     }
   ],
   "version" : 1

@@ -16,6 +16,7 @@ public enum AuthenticationState: Equatable {
 
 public enum AuthenticationAction: Equatable {
     case welcome(WelcomeAction)
+    case finished
 }
 
 public struct AuthenticationEnvironment {
@@ -35,6 +36,8 @@ public struct AuthenticationEnvironment {
 }
 
 public extension AuthenticationEnvironment {
+    
+    /// Mocked environment
     static let mock = AuthenticationEnvironment(
         mainQueue: .main,
         createUserGateway: MockedCreateUserGateway(),
@@ -57,7 +60,7 @@ struct MockedGetUserGateway: GetUserGateway {
     }
 }
 
-public var authenticationReducer = Reducer<AuthenticationState, AuthenticationAction, AuthenticationEnvironment>.combine(
+public let authenticationReducer = Reducer<AuthenticationState, AuthenticationAction, AuthenticationEnvironment>.combine(
     welcomeReducer.pullback(
         state: /AuthenticationState.welcome,
         action: /AuthenticationAction.welcome,
@@ -66,7 +69,11 @@ public var authenticationReducer = Reducer<AuthenticationState, AuthenticationAc
     
     Reducer { state, action, evironment in
         switch action {
+        case .welcome(.login(.loginSucceeded)):
+            return .init(value: .finished)
         case .welcome:
+            return .none
+        case .finished:
             return .none
         }
     }

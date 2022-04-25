@@ -13,7 +13,6 @@ import ComposableArchitecture
 public struct LoginState: Equatable {
     @BindableState var email = ""
     @BindableState var password = ""
-    @BindableState var hasLoggedIn = false
     
     var isFormValid = false
     var isLoading = false
@@ -25,6 +24,7 @@ public enum LoginAction: BindableAction, Equatable {
     case login
     case alertDismissed
     case loginResult(Result<None, DomainError>)
+    case loginSucceeded
 }
 
 private let loginValidator = ValidateEntityUseCase<LoginState> { user in
@@ -62,13 +62,17 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         
         switch result {
         case .success:
-            state.hasLoggedIn = true
+            return .init(value: .loginSucceeded)
         case .failure:
             state.errorAlert = errorAlert(message: "Login failed!")
+            return .none
         }
-        return .none
         
     case .alertDismissed:
+        return .none
+        
+    case .loginSucceeded:
+        // Final event. It's tracked in AuthenticationCore.
         return .none
     }
 }.binding()

@@ -7,6 +7,7 @@
 
 import Domain
 import AuthenticationFeature
+import MoviesListFeature
 import ComposableArchitecture
 
 struct AppEnvironment {
@@ -19,6 +20,10 @@ extension AppEnvironment {
     )
     
     var authentication: AuthenticationEnvironment {
+        .mock
+    }
+    
+    var moviesList: MoviesListFeatureEnvironment {
         .mock
     }
 }

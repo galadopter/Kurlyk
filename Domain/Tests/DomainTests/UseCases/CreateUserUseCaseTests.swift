@@ -26,7 +26,7 @@ class CreateUserUseCaseTests: XCTestCase {
 
         do {
             try await sut.execute(input: user)
-            XCTFail("Expected to throw while awaiting, but succeeded")
+            fail("Expected to throw while awaiting, but succeeded")
         } catch {
             expect(error as? TestError).to(equal(.generic))
         }

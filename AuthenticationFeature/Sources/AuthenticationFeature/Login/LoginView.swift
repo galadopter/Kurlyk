@@ -36,7 +36,6 @@ extension LoginView: View {
             passwordField
             Spacer()
             loginButton
-            navigation
         }
             .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
             .background(Theme.default.colors.background)
@@ -73,18 +72,6 @@ private extension LoginView {
             viewStore.send(.login)
         }.disabled(!viewStore.isFormValid)
         .padding()
-    }
-}
-
-// MARK: - Navigation
-extension LoginView {
-    
-    var navigation: some View {
-        NavigationLink(
-            destination: UserCreationSucceedView(),
-            isActive: viewStore.binding(\.$hasLoggedIn),
-            label: EmptyView.init
-        )
     }
 }
 
