@@ -57,11 +57,12 @@ var createUserReducer = Reducer<CreateUserState, CreateUserAction, Authenticatio
         let user = User.Create(email: state.email, password: state.password, name: state.name, biography: "")
         state.isCreatingUser = true
         
-        return Effect<Void, DomainError>.task {
+        return Effect<Void, Error>.task {
             try await userCreator.execute(input: user)
         }
         .receive(on: environment.mainQueue)
         .mapToNone()
+        .mapError { _ in DomainError.generic }
         .catchToEffect(CreateUserAction.userCreationResult)
     
     case .userCreationResult(let result):

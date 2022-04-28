@@ -20,6 +20,9 @@ public struct PaginationUseCase<T: HasTotalPages> {
         case reachedTheLimit
     }
     
+    /// Initialize use case with predefined task.
+    ///
+    /// - Parameter paginationTask: Async closure which makes a request for a particular page.
     public init(paginationTask: @escaping PaginationUseCase.Task) {
         self.task = paginationTask
     }
@@ -30,7 +33,7 @@ extension PaginationUseCase: AsyncThrowableUseCaseType {
     /// Use case's output.
     public struct Output {
         /// Modified pagination object. If task completed successfuly, new pagination will contain incremented page number.
-        public let pagination: Pagination
+        public let pagination: PaginationCounter
         /// Result for a given page.
         public let result: T
     }
@@ -41,8 +44,8 @@ extension PaginationUseCase: AsyncThrowableUseCaseType {
     ///
     /// - Throws: It throws `PaginationError.reachedTheLimit` if pagination is already on it's last page.
     ///
-    /// - Returns: A modified `Pagination` metadata and a result of a task.
-    public func execute(input: Pagination) async throws -> Output {
+    /// - Returns: A modified `PaginationCounter` metadata and a result of a task.
+    public func execute(input: PaginationCounter) async throws -> Output {
         var pagination = input
         guard !pagination.isLastPage else {
             throw PaginationError.reachedTheLimit
@@ -54,5 +57,11 @@ extension PaginationUseCase: AsyncThrowableUseCaseType {
         pagination.set(totalPages: result.totalPages)
         
         return .init(pagination: pagination, result: result)
+    }
+}
+
+extension PaginationUseCase.Output: Equatable where T: Equatable {
+    public static func == (lhs: PaginationUseCase<T>.Output, rhs: PaginationUseCase<T>.Output) -> Bool {
+        return rhs.pagination == rhs.pagination && lhs.result == rhs.result
     }
 }

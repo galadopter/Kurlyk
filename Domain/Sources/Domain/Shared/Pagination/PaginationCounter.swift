@@ -7,14 +7,10 @@
 
 import Foundation
 
-public protocol Pagination {
-    var currentPage: Int { get }
-    var isLastPage: Bool { get }
-    mutating func increment()
-    mutating func set(totalPages: Int)
-}
-
-public struct PaginationCounter: Pagination {
+/// Gives ability to count pages and check for page overflow.
+///
+/// It's used together with `PaginationUseCase`.
+public struct PaginationCounter: Equatable {
     public var currentPage = 1
     private var totalPages: Int?
     

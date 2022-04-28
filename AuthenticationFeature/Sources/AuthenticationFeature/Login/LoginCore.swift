@@ -50,11 +50,12 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         let user = User.Get(email: state.email, password: state.password)
         state.isLoading = true
 
-        return Effect<Void, DomainError>.task {
+        return Effect<Void, Error>.task {
             _ = try await userGetter.execute(input: user)
         }
         .receive(on: environment.mainQueue)
         .mapToNone()
+        .mapError { _ in DomainError.generic }
         .catchToEffect(LoginAction.loginResult)
         
     case .loginResult(let result):
@@ -63,12 +64,13 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         switch result {
         case .success:
             return .init(value: .loginSucceeded)
-        case .failure:
+        case .failure(let error):
             state.errorAlert = errorAlert(message: "Login failed!")
             return .none
         }
         
     case .alertDismissed:
+        state.errorAlert = nil
         return .none
         
     case .loginSucceeded:

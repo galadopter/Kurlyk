@@ -15,7 +15,7 @@ class PaginationUseCaseTests: XCTestCase {
     func testShouldFinish_whenLimitHasReached() async throws {
         let totalPages = 3
         let pages = (1...totalPages).map { Mocks.moviesPage(page: $0, totalPages: totalPages) }
-        var pagination: Pagination = PaginationCounter()
+        var pagination = PaginationCounter()
         
         let sut = PaginationUseCase<MoviesPage>(paginationTask: { currentPage in
             pages[currentPage - 1]
@@ -31,7 +31,7 @@ class PaginationUseCaseTests: XCTestCase {
     func testShouldStopIncrementingPage_whenErrorOccured() async {
         let totalPages = 3
         let pages = (1...totalPages).map { Mocks.moviesPage(page: $0, totalPages: totalPages) }
-        var pagination: Pagination = PaginationCounter()
+        var pagination = PaginationCounter()
         
         let sut = PaginationUseCase<MoviesPage>(paginationTask: { currentPage in
             if currentPage == 2 {
@@ -57,7 +57,7 @@ class PaginationUseCaseTests: XCTestCase {
     func testShouldReceivingError_whenTryingToGoOverTheLimit() async {
         let totalPages = 3
         let pages = (1...totalPages).map { Mocks.moviesPage(page: $0, totalPages: totalPages) }
-        var pagination: Pagination = PaginationCounter()
+        var pagination = PaginationCounter()
         
         let sut = PaginationUseCase<MoviesPage>(paginationTask: { currentPage in
             pages[currentPage - 1]

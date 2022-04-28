@@ -20,11 +20,14 @@ public enum MoviesListFeatureAction: Equatable {
 
 public struct MoviesListFeatureEnvironment {
     let mainQueue: AnySchedulerOf<DispatchQueue>
+    let getPopularMoviesGateway: GetPopularMoviesGateway
     
     public init(
-        mainQueue: AnySchedulerOf<DispatchQueue>
+        mainQueue: AnySchedulerOf<DispatchQueue>,
+        getPopularMoviesGateway: GetPopularMoviesGateway
     ) {
         self.mainQueue = mainQueue
+        self.getPopularMoviesGateway = getPopularMoviesGateway
     }
 }
 
@@ -32,8 +35,20 @@ public extension MoviesListFeatureEnvironment {
     
     /// Mocked environment
     static let mock = MoviesListFeatureEnvironment(
-        mainQueue: .main
+        mainQueue: .main,
+        getPopularMoviesGateway: MockedGetPopularMoviesGateway()
     )
+}
+
+class MockedGetPopularMoviesGateway: GetPopularMoviesGateway {
+    let bladeRunnerPoster = URL(string: "https://upload.wikimedia.org/wikipedia/en/9/9f/Blade_Runner_%281982_poster%29.png")!
+    var page = 0
+    
+    func get(popularMovies: MoviesPage.Get) async throws -> MoviesPage {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        page += 1
+        return .init(page: page, totalPages: 10, movies: (1...10).map { .init(id: UUID().uuidString, title: "\((10 * (page - 1)) + $0)", overview: "", rating: 0.95, posterURL: bladeRunnerPoster, releaseDate: .now) })
+    }
 }
 
 public let moviesListFeatureReducer = Reducer<MoviesListFeatureState, MoviesListFeatureAction, MoviesListFeatureEnvironment>.combine(
