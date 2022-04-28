@@ -44,6 +44,7 @@
 		7AC0AF9D0AE475493B8E2C36 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8126799005F7427F5A5A26D0 /* KurlykApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlykApp.swift; sourceTree = "<group>"; };
 		97680F117FC4940C62BAEBFB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		988F196B281ABA5200BF883E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		98AECF0A280ED79900ADBF6E /* MoviesListFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListFeature; sourceTree = "<group>"; };
 		9F31C209F7E53CBB368860BB /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
@@ -119,6 +120,7 @@
 		48B72D4BF29F7FF2C9AF2810 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				988F196B281ABA5200BF883E /* NetworkKit */,
 				98AECF0A280ED79900ADBF6E /* MoviesListFeature */,
 				036CEDDB5CDA84343D3543CC /* AuthenticationFeature */,
 				B07572FFB0F57DD3A7E3B97B /* ComponentsKit */,
