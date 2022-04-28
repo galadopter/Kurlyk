@@ -11,6 +11,5 @@ public protocol RequestType {
     var baseURL: URL { get }
     var path: String { get }
     var method: RequestMethod { get }
-    var stubName: String? { get }
     var headers: [String: String]? { get }
 }

@@ -7,6 +7,7 @@
 
 import Domain
 import AuthenticationFeature
+import MoviesListAPI
 import MoviesListFeature
 import ComposableArchitecture
 
@@ -24,6 +25,9 @@ extension AppEnvironment {
     }
     
     var moviesList: MoviesListFeatureEnvironment {
-        .mock
+        .init(
+            mainQueue: .main,
+            getPopularMoviesGateway: MoviesService()
+        )
     }
 }

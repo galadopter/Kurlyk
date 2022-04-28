@@ -15,6 +15,8 @@
 		74A3670698CEDBCDC7C37CDA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */; };
 		7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0AF9D0AE475493B8E2C36 /* AppView.swift */; };
 		981C7F13280EDA2D007D6013 /* MoviesListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 981C7F12280EDA2D007D6013 /* MoviesListFeature */; };
+		98E51DFC281B311200016867 /* MoviesListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 98E51DFB281B311200016867 /* MoviesListAPI */; };
+		98E51DFE281B3AFB00016867 /* InitialSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E51DFD281B3AFB00016867 /* InitialSetup.swift */; };
 		9F231F55BA9A8C9ADE3EE362 /* KurlykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F2E92BC7A6AAFED67E9FF /* KurlykTests.swift */; };
 		AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */; };
 		BB6647B93731DE66E59A47C0 /* KurlykApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126799005F7427F5A5A26D0 /* KurlykApp.swift */; };
@@ -46,6 +48,8 @@
 		97680F117FC4940C62BAEBFB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		988F196B281ABA5200BF883E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
 		98AECF0A280ED79900ADBF6E /* MoviesListFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListFeature; sourceTree = "<group>"; };
+		98E51DFA281B2AB700016867 /* MoviesListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListAPI; sourceTree = "<group>"; };
+		98E51DFD281B3AFB00016867 /* InitialSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetup.swift; sourceTree = "<group>"; };
 		9F31C209F7E53CBB368860BB /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
 		B6256A629A02FAD982FCB575 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E51DFC281B311200016867 /* MoviesListAPI in Frameworks */,
 				981C7F13280EDA2D007D6013 /* MoviesListFeature in Frameworks */,
 				AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */,
 			);
@@ -113,6 +118,7 @@
 				12C159DFC20751D57E99B40A /* Info.plist */,
 				8126799005F7427F5A5A26D0 /* KurlykApp.swift */,
 				3095223C6F9F72575CEA8941 /* AppView */,
+				98E51DFD281B3AFB00016867 /* InitialSetup.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -120,6 +126,7 @@
 		48B72D4BF29F7FF2C9AF2810 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				98E51DFA281B2AB700016867 /* MoviesListAPI */,
 				988F196B281ABA5200BF883E /* NetworkKit */,
 				98AECF0A280ED79900ADBF6E /* MoviesListFeature */,
 				036CEDDB5CDA84343D3543CC /* AuthenticationFeature */,
@@ -210,6 +217,7 @@
 			packageProductDependencies = (
 				005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */,
 				981C7F12280EDA2D007D6013 /* MoviesListFeature */,
+				98E51DFB281B311200016867 /* MoviesListAPI */,
 			);
 			productName = Kurlyk;
 			productReference = 3907E3E09A18B39836D36B3E /* Kurlyk.app */;
@@ -280,6 +288,7 @@
 			files = (
 				684098D773CC8396139D79C3 /* AppAction.swift in Sources */,
 				3323BFA01FC63338C94D561C /* AppEnvironment.swift in Sources */,
+				98E51DFE281B3AFB00016867 /* InitialSetup.swift in Sources */,
 				335CF55F3EEC255A4EA68DA7 /* AppReducer.swift in Sources */,
 				0FFFA5E0764505AD8008B11E /* AppState.swift in Sources */,
 				7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */,
@@ -538,6 +547,10 @@
 		981C7F12280EDA2D007D6013 /* MoviesListFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MoviesListFeature;
+		};
+		98E51DFB281B311200016867 /* MoviesListAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesListAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

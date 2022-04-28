@@ -12,9 +12,9 @@ import Foundation
 /// Here's an example of  how API could be divided into services:
 ///  - `posts/ --> PostsAPI + PostsService`
 ///  - `users/ --> UsersAPI + UsersService`
-public class NetworkService<API: RequestType> {
+open class NetworkService<API: RequestType> {
     
-    let network: Network<API>
+    public let network: Network<API>
     
     public init(network: Network<API> = Network()) {
         self.network = network
