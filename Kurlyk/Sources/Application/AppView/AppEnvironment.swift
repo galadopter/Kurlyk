@@ -25,9 +25,11 @@ extension AppEnvironment {
     }
     
     var moviesList: MoviesListFeatureEnvironment {
-        .init(
+        let service = MoviesService()
+        return .init(
             mainQueue: .main,
-            getPopularMoviesGateway: MoviesService()
+            getPopularMoviesGateway: service,
+            getMovieDetailsGateway: service
         )
     }
 }

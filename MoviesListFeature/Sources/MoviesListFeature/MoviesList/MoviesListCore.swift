@@ -12,14 +12,18 @@ import ComponentsKit
 
 public struct MoviesListState: Equatable {
     var isLoadingMovies = false
+    var selectedMovie: MovieDetailsState?
     var popularMovies = [PopularMovie]()
     var popularMoviesCounter = PaginationCounter()
     var errorAlert: AlertState<MoviesListAction>?
 }
 
 public enum MoviesListAction: Equatable {
+    case movieDetails(MovieDetailsAction)
     case loadNextPage
     case receivedPopularMovies(Result<PaginationUseCase<MoviesPage>.Output, MoviesListError>)
+    case selectMovie(_ movie: PopularMovie)
+    case dismissMovieDetails
     case alertDismissed
 }
 
@@ -36,6 +40,13 @@ private let popularMoviesGetter = { (useCase: GetPopularMoviesUseCase) in
 }
 
 let moviesListReducer = Reducer<MoviesListState, MoviesListAction, MoviesListFeatureEnvironment>.combine(
+    movieDetailsReducer
+        .optional()
+        .pullback(
+            state: \.selectedMovie,
+            action: /MoviesListAction.movieDetails,
+            environment: { $0 }
+        ),
     
     Reducer { state, action, environment in
         switch action {
@@ -64,20 +75,34 @@ let moviesListReducer = Reducer<MoviesListState, MoviesListAction, MoviesListFea
             
             switch result {
             case .success(let output):
+                let dateFormatter = DateFormatter.medium
                 state.popularMoviesCounter = output.pagination
                 state.popularMovies += output.result.movies.map {
-                    PopularMovie(domain: $0, dateFormatter: DateFormatter())
+                    PopularMovie(domain: $0, dateFormatter: dateFormatter)
                 }
+                
                 return .none
             case .failure(.reachedMoviesLimit):
                 return .none
             case .failure(.generic):
                 state.errorAlert = errorAlert(message: "Something went wrong!")
+                
                 return .none
             }
             
         case .alertDismissed:
             state.errorAlert = nil
+            return .none
+            
+        case .selectMovie(let movie):
+            state.selectedMovie = .init(movieID: .init(id: movie.id))
+            return .none
+            
+        case .dismissMovieDetails:
+            state.selectedMovie = nil
+            return .none
+            
+        case .movieDetails:
             return .none
         }
     }

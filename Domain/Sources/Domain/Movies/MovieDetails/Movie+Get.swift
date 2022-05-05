@@ -9,7 +9,7 @@ import Foundation
 
 extension MovieDetails {
     
-    public struct Get {
+    public struct Get: Equatable {
         public let id: String
         
         public init(id: String) {

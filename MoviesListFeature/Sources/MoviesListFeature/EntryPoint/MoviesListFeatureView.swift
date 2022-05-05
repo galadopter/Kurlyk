@@ -17,13 +17,15 @@ public struct MoviesListFeatureView: View {
     }
     
     public var body: some View {
-        IfLetStore(
-            store.scope(
-                state: /MoviesListFeatureState.moviesList,
-                action: MoviesListFeatureAction.moviesList
-            ),
-            then: MoviesListView.init(store:)
-        )
+        NavigationView {
+            IfLetStore(
+                store.scope(
+                    state: /MoviesListFeatureState.moviesList,
+                    action: MoviesListFeatureAction.moviesList
+                ),
+                then: MoviesListView.init(store:)
+            )
+        }
     }
 }
 

@@ -16,7 +16,7 @@ struct PopularMovieRow: View {
             Theme.default.colors.background.swiftUIColor
             HStack(spacing: 18) {
                 poster
-                VStack {
+                VStack(alignment: .leading) {
                     title
                     subtitle
                 }
@@ -65,6 +65,7 @@ private extension PopularMovieRow {
 
 // MARK: - Helpers
 private extension PopularMovieRow {
+    
     enum Constants {
         static let ratingViewSide: CGFloat = 60
         static let posterWidth: CGFloat = 49

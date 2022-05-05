@@ -18,8 +18,19 @@ public extension View {
         background(color.swiftUIColor)
     }
     
+    /// Accent color modifier with DesignSystem support.
+    ///
+    /// - Parameter accentColor: The color to use as an accent color. Set the
+    ///   value to `nil` to use the inherited accent color.
     @inlinable func accentColor(_ color: Color) -> some View {
         accentColor(color.swiftUIColor)
+    }
+    
+    /// Tint modifier with DesignSystem support.
+    ///
+    /// - Parameter tint: The tint ``Color`` to apply.
+    @inlinable func tint(_ tint: Color) -> some View {
+        self.tint(tint.swiftUIColor)
     }
 }
 

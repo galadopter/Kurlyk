@@ -7,10 +7,12 @@
 
 import SwiftUI
 import ComposableArchitecture
+import ComponentsKit
 import DesignSystem
 
 struct MoviesListView {
     
+    @State private var movieToShow: PopularMovie?
     @ObservedObject private var viewStore: ViewStore<MoviesListState, MoviesListAction>
     
     private let store: Store<MoviesListState, MoviesListAction>
@@ -18,6 +20,13 @@ struct MoviesListView {
     init(store: Store<MoviesListState, MoviesListAction>) {
         self.store = store
         viewStore = ViewStore(store)
+        
+        let navbarAppearance = UINavigationBarAppearance()
+        navbarAppearance.titleTextAttributes = [.foregroundColor: Theme.default.colors.text.title.uiColor]
+        navbarAppearance.backgroundColor = Theme.default.colors.background.uiColor
+        UINavigationBar.appearance().standardAppearance = navbarAppearance
+        UINavigationBar.appearance().compactAppearance = navbarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navbarAppearance
     }
 }
 
@@ -25,12 +34,26 @@ struct MoviesListView {
 extension MoviesListView: View {
     
     var body: some View {
-        NavigationView {
-            popularMoviesList
-        }.background(Theme.default.colors.background)
-        .onAppear {
-            viewStore.send(.loadNextPage)
-        }
+        popularMoviesList
+            .background(Theme.default.colors.background)
+            .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
+            .navigationTitle("MOVIESLIST")
+            .navigationBarTitleDisplayMode(.inline)
+            .sheet(
+                item: viewStore.binding(
+                    get: \.selectedMovie,
+                    send: .dismissMovieDetails
+                ),
+                content: { _ in
+                    IfLetStore(
+                        store.scope(state: \.selectedMovie, action: MoviesListAction.movieDetails),
+                        then: MovieDetailsView.init(store:)
+                    )
+                }
+            )
+            .onAppear {
+                viewStore.send(.loadNextPage)
+            }
     }
 }
 
@@ -38,44 +61,23 @@ extension MoviesListView: View {
 private extension MoviesListView {
     
     var popularMoviesList: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(viewStore.popularMovies.indices, id: \.self) { index in
-                    popularMoviesRow(viewStore.popularMovies[index])
-                        .onAppear {
-                            guard shouldLoadNextPage(currentIndex: index, collection: viewStore.popularMovies) else { return }
-                            viewStore.send(.loadNextPage)
-                        }
-                    bottomProgressView(currentIndex: index)
-                }
+        PagedList(
+            viewStore.popularMovies,
+            hasLoadedLastPage: !viewStore.isLoadingMovies,
+            nextPage: {
+                viewStore.send(.loadNextPage)
+            },
+            content: { movie in
+                popularMovieRow(movie: movie)
             }
-        }
+        )
     }
     
-    func popularMoviesRow(_ movie: PopularMovie) -> some View {
+    func popularMovieRow(movie: PopularMovie) -> some View {
         PopularMovieRow(movie: movie)
-    }
-    
-    @ViewBuilder
-    func bottomProgressView(currentIndex: Int) -> some View {
-        if viewStore.isLoadingMovies && currentIndex == viewStore.popularMovies.endIndex - 1 {
-            HStack {
-                ProgressView()
-                Text("Loading more...")
+            .onTapGesture {
+                viewStore.send(.selectMovie(movie))
             }
-        }
-    }
-}
-
-// MARK: - Helpers
-private extension MoviesListView {
-    
-    enum Constants {
-        static let loadItemsThreshold = 4
-    }
-    
-    func shouldLoadNextPage<T>(currentIndex: Int, collection: Array<T>) -> Bool {
-        collection.distance(from: currentIndex, to: collection.endIndex) == Constants.loadItemsThreshold
     }
 }
 

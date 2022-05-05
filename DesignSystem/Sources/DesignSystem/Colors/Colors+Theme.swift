@@ -17,8 +17,11 @@ extension Theme {
         /// Text colors
         public var text: Text
         
-        /// Navigation color.
+        /// Navigation color
         public var navigation: Color
+        
+        /// Accessory color
+        public var accessory: Color
         
         /// Background color
         public var background: Color
@@ -35,6 +38,9 @@ extension Theme.Colors {
         
         /// Secondary text color
         public var secondary: Color
+        
+        /// Title text color
+        public var title: Color
         
         /// Placeholder text color
         public var placeholder: Color
