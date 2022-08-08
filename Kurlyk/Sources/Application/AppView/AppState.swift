@@ -13,5 +13,5 @@ enum AppState: Equatable {
     case authentication(AuthenticationState)
     case moviesList(MoviesListFeatureState)
     
-    init() { self = .moviesList(.init()) }
+    init() { self = .authentication(.init()) }
 }

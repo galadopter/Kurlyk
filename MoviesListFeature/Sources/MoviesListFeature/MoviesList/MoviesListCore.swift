@@ -85,7 +85,7 @@ let moviesListReducer = Reducer<MoviesListState, MoviesListAction, MoviesListFea
             case .failure(.reachedMoviesLimit):
                 return .none
             case .failure(.generic):
-                state.errorAlert = errorAlert(message: "Something went wrong!")
+                state.errorAlert = errorAlert(message: L10n.Errors.generic)
                 
                 return .none
             }

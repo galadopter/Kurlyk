@@ -52,8 +52,8 @@ public actor WebSocketConnection<Channel: ChannelType> {
         engine.register(delegate: self)
         
         if connectOnInitialization {
-            Task {
-                await connect()
+            Task.detached { [weak self] in
+                await self?.connect()
             }
         }
     }

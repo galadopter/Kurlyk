@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "MoviesListFeature",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v15)
     ],
@@ -18,7 +19,8 @@ let package = Package(
         .package(path: "../DesignSystem"),
         .package(path: "../Domain"),
         .package(path: "../ComponentsKit"),
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.28.1")
+        .package(path: "../SwiftGenPlugin"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.39.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,7 +32,15 @@ let package = Package(
                 "DesignSystem",
                 "ComponentsKit",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
-            ]),
+            ],
+            exclude: ["Resources/swiftgen.yml"],
+            resources: [
+                .process("Resources")
+            ],
+            plugins: [
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
+            ]
+        ),
         .testTarget(
             name: "MoviesListFeatureTests",
             dependencies: [

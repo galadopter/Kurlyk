@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Kurlyk
+
+  Created by Yan Schneider on 30/05/2022.
+  
+*/
+
+/* Movies List */
+
+"moviesList.navigationTitle" = "MOVIESLIST";
+
+/* Movie details */
+
+"movieDetails.overview.title" = "Overview";
+
+/* Other */
+
+"errors.generic" = "Something went wrong!";

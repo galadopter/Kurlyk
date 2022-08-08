@@ -29,6 +29,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment>.combine(
         switch action {
         case .authentication(.finished):
             state = .moviesList(.init())
+            
             return .none
             
         case .authentication:

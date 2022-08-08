@@ -42,7 +42,7 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         
     case .login:
         if !state.isFormValid {
-            state.errorAlert = errorAlert(message: "Check your data")
+            state.errorAlert = errorAlert(message: L10n.Errors.Login.failedResponse)
             return .none
         }
         
@@ -65,7 +65,7 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         case .success:
             return .init(value: .loginSucceeded)
         case .failure(let error):
-            state.errorAlert = errorAlert(message: "Login failed!")
+            state.errorAlert = errorAlert(message: L10n.Errors.Login.failedResponse)
             return .none
         }
         

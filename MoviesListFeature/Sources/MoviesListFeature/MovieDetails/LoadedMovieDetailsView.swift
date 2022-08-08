@@ -52,7 +52,7 @@ private extension LoadedMovieDetailsView {
     
     var overview: some View {
         VStack(alignment: .leading, spacing: Theme.default.sizes.md) {
-            Text("Overview")
+            Text(L10n.MovieDetails.Overview.title)
                 .font(Theme.default.fonts.defaultFont(.title3, .bold))
                 .foregroundColor(Theme.default.colors.text.secondary)
             Text(movie.overview)

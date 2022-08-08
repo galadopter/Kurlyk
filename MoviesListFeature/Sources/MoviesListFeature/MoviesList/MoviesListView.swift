@@ -37,7 +37,7 @@ extension MoviesListView: View {
         popularMoviesList
             .background(Theme.default.colors.background)
             .alert(store.scope(state: \.errorAlert), dismiss: .alertDismissed)
-            .navigationTitle("MOVIESLIST")
+            .navigationTitle(L10n.MoviesList.navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .sheet(
                 item: viewStore.binding(

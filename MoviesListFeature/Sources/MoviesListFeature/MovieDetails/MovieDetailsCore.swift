@@ -53,7 +53,7 @@ let movieDetailsReducer = Reducer<MovieDetailsState, MovieDetailsAction, MoviesL
                 
                 return .none
             case .failure:
-                state.errorAlert = errorAlert(message: "Something went wrong!")
+                state.errorAlert = errorAlert(message: L10n.Errors.generic)
                 
                 return .none
             }

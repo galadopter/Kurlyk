@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Kurlyk
+
+  Created by Yan Schneider on 30/05/2022.
+  
+*/
+
+/* Login */
+
+"login.fields.email.title" = "Email";
+"login.fields.email.prompt" = "test@example.com";
+"login.fields.password.title" = "Password";
+"login.fields.password.prompt" = "Enter your password here";
+"login.buttons.login" = "Login";
+
+/* Create User */
+
+"createUser.fields.name.title" = "Name";
+"createUser.fields.name.prompt" = "John Dorian";
+"createUser.fields.email.title" = "Email";
+"createUser.fields.email.prompt" = "test@example.com";
+"createUser.fields.password.title" = "Password";
+"createUser.fields.password.prompt" = "Enter your password here";
+"createUser.fields.confirmPassword.title" = "Confirm Password";
+"createUser.fields.confirmPassword.prompt" = "Repeat your password";
+"createUser.buttons.create" = "Create user";
+
+/* Errors */
+
+"errors.login.failedResponse" = "Login failed!";
+"errors.createUser.failedResponse" = "User creation failed!";
+"errors.wrondData" = "Check your data";
+"errors.generic" = "Something went wrong!";

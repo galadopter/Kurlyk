@@ -47,7 +47,8 @@ private extension LoginView {
     
     var emailField: some View {
         NamedField(
-            title: "Email", prompt: "test@example.com",
+            title: L10n.Login.Fields.Email.title,
+            prompt: L10n.Login.Fields.Email.prompt,
             text: viewStore.binding(\.$email)
         )
             .keyboardType(.emailAddress)
@@ -59,8 +60,11 @@ private extension LoginView {
     }
     
     var passwordField: some View {
-        PasswordField(title: "Password", prompt: "Enter your password here",
-                      text: viewStore.binding(\.$password))
+        PasswordField(
+            title: L10n.Login.Fields.Password.title,
+            prompt: L10n.Login.Fields.Password.prompt,
+            text: viewStore.binding(\.$password)
+        )
             .focused($focusedField, equals: .password)
             .onSubmit {
                 viewStore.send(.login)
@@ -68,7 +72,10 @@ private extension LoginView {
     }
     
     var loginButton: some View {
-        PrimaryButton(title: "Login", showLoading: viewStore.isLoading) {
+        PrimaryButton(
+            title: L10n.Login.Buttons.login,
+            showLoading: viewStore.isLoading
+        ) {
             viewStore.send(.login)
         }.disabled(!viewStore.isFormValid)
         .padding()

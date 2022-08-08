@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Kurlyk
+
+  Created by Yan Schneider on 30/05/2022.
+  
+*/
+
+/* Login */
+
+"login.fields.email.title" = "E-mail";
+"login.fields.email.prompt" = "test@example.com";
+"login.fields.password.title" = "Пароль";
+"login.fields.password.prompt" = "Введите свой пароль";
+"login.buttons.login" = "Войти";
+
+/* Create User */
+
+"createUser.fields.name.title" = "Имя";
+"createUser.fields.name.prompt" = "Иван Морозов";
+"createUser.fields.email.title" = "E-mail";
+"createUser.fields.email.prompt" = "test@example.com";
+"createUser.fields.password.title" = "Пароль";
+"createUser.fields.password.prompt" = "Введите пароль";
+"createUser.fields.confirmPassword.title" = "Подтверждение пароля";
+"createUser.fields.confirmPassword.prompt" = "Повторите ваш пароль";
+"createUser.buttons.create" = "Создать пользователя";
+
+/* Errors */
+
+"errors.login.failedResponse" = "Ошибка при входе в учетную запись!";
+"errors.createUser.failedResponse" = "Ошика при создании пользователя!";
+"errors.login.wrondData" = "Проверьте введенные данные";
+"errors.generic" = "Что-то пошло не так!";
