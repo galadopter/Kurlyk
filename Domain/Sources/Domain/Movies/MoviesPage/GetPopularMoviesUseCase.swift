@@ -20,7 +20,7 @@ public struct GetPopularMoviesUseCase {
 }
 
 // MARK: - AsyncThrowableUseCaseType
-extension GetPopularMoviesUseCase: AsyncThrowableUseCaseType {
+extension GetPopularMoviesUseCase: AsyncThrowingUseCaseType {
     
     public func execute(input: MoviesPage.Get) async throws -> MoviesPage {
         try await gateway.get(popularMovies: input)

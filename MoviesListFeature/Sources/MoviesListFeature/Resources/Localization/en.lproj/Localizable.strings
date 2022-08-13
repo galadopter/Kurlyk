@@ -6,6 +6,11 @@
   
 */
 
+/* Tab View */
+
+"tabView.moviesList.title" = "Список фильмов";
+"tabView.favoriteMovies.title" = "Избранное";
+
 /* Movies List */
 
 "moviesList.navigationTitle" = "MOVIESLIST";
@@ -13,6 +18,12 @@
 /* Movie details */
 
 "movieDetails.overview.title" = "Overview";
+"movieDetails.favoriteButton.on.title" = "Make Favorite";
+"movieDetails.favoriteButton.off.title" = "Favorite";
+
+/* Favorite movies */
+
+"favoriteMovies.navigationTitle" = "Favorites";
 
 /* Other */
 

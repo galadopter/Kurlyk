@@ -28,7 +28,7 @@ public struct PaginationUseCase<T: HasTotalPages> {
     }
 }
 
-extension PaginationUseCase: AsyncThrowableUseCaseType {
+extension PaginationUseCase: AsyncThrowingUseCaseType {
     
     /// Use case's output.
     public struct Output {
@@ -63,5 +63,13 @@ extension PaginationUseCase: AsyncThrowableUseCaseType {
 extension PaginationUseCase.Output: Equatable where T: Equatable {
     public static func == (lhs: PaginationUseCase<T>.Output, rhs: PaginationUseCase<T>.Output) -> Bool {
         return rhs.pagination == rhs.pagination && lhs.result == rhs.result
+    }
+}
+
+extension PaginationUseCase.Output: Hashable where T: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        pagination.hash(into: &hasher)
+        result.hash(into: &hasher)
     }
 }

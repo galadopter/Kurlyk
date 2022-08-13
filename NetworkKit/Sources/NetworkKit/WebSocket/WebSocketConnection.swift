@@ -46,7 +46,7 @@ public actor WebSocketConnection<Channel: ChannelType> {
         endpoint: WebSocketEndpoint,
         engine: Engine = NativeEngine(),
         connectOnInitialization: Bool = true
-    ) {
+    ) async {
         self.endpoint = endpoint
         self.engine = engine
         engine.register(delegate: self)

@@ -10,7 +10,7 @@ import Foundation
 /// Gives ability to count pages and check for page overflow.
 ///
 /// It's used together with `PaginationUseCase`.
-public struct PaginationCounter: Equatable {
+public struct PaginationCounter: Equatable, Hashable {
     public var currentPage = 1
     private var totalPages: Int?
     

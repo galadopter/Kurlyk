@@ -28,7 +28,12 @@ extension MovieDetailsView: View {
         ZStack {
             background
             if let movie = viewStore.movieDetails {
-                LoadedMovieDetailsView(movie: movie)
+                LoadedMovieDetailsView(
+                    movie: movie,
+                    isPerformingLoadingAction: viewStore.isPerformingFavoriteAction
+                ) {
+                    viewStore.send(.favoriteButtonPressed)
+                }.animation(.default, value: viewStore.isPerformingFavoriteAction)
             } else {
                 loader
             }

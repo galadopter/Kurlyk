@@ -20,7 +20,7 @@ public struct PrimaryButton {
     /// Initializer for primary button
     ///
     /// - Parameter title: Title of the button
-    /// - Parameter showLoading: Controls loader visibility. 
+    /// - Parameter showLoading: Controls loader visibility. Default to `false`.
     /// - Parameter action: Action that is performed on button press
     public init(
         title: String,

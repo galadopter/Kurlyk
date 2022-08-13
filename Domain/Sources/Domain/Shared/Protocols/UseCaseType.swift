@@ -25,8 +25,13 @@ public protocol AsyncUseCaseType {
     func execute(input: Input) async -> Output
 }
 
-public protocol AsyncThrowableUseCaseType {
+public protocol AsyncThrowingUseCaseType {
     associatedtype Input
     associatedtype Output
     func execute(input: Input) async throws -> Output
+}
+
+public protocol AsyncThrowingNoInputUseCaseType {
+    associatedtype Output
+    func execute() async throws -> Output
 }

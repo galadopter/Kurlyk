@@ -7,9 +7,12 @@
 
 import SwiftUI
 import DesignSystem
+import ComponentsKit
 
 struct LoadedMovieDetailsView: View {
     let movie: MovieDetails
+    let isPerformingLoadingAction: Bool
+    let favoriteAction: () -> Void
     
     var body: some View {
         VStack(spacing: Theme.default.sizes.xxl) {
@@ -22,6 +25,8 @@ struct LoadedMovieDetailsView: View {
                 Spacer()
             }.padding(.horizontal, Theme.default.sizes.xl)
             Spacer()
+            favoriteButton
+                .padding(Theme.default.sizes.xl)
         }.padding(.top, Theme.default.sizes.xl)
     }
 }
@@ -60,6 +65,23 @@ private extension LoadedMovieDetailsView {
                 .foregroundColor(Theme.default.colors.text.secondary)
         }
     }
+    
+    @ViewBuilder
+    var favoriteButton: some View {
+        if movie.isFavorite {
+            SecondaryButton(
+                title: L10n.MovieDetails.FavoriteButton.Off.title,
+                showLoading: isPerformingLoadingAction,
+                action: favoriteAction
+            ).transition(.opacity)
+        } else {
+            PrimaryButton(
+                title: L10n.MovieDetails.FavoriteButton.On.title,
+                showLoading: isPerformingLoadingAction,
+                action: favoriteAction
+            ).transition(.opacity)
+        }
+    }
 }
 
 // MARK: - Helpers
@@ -78,8 +100,12 @@ struct LoadedMovieDetailsView_Previews: PreviewProvider {
                 title: "Blade Runner",
                 posterURL: URL(string: "https://upload.wikimedia.org/wikipedia/en/9/9f/Blade_Runner_%281982_poster%29.png")!,
                 overview: "Awesome movie",
-                releaseDate: "June 25, 1982"
-            )
-        )
+                releaseDate: "June 25, 1982",
+                isFavorite: false
+            ),
+            isPerformingLoadingAction: false,
+            favoriteAction: {}
+            
+        ).background(.black)
     }
 }

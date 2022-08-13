@@ -11,11 +11,18 @@ import Domain
 public extension MoviesListFeatureEnvironment {
     
     /// Mocked environment
-    static let mock = MoviesListFeatureEnvironment(
-        mainQueue: .main,
-        getPopularMoviesGateway: MockedGetPopularMoviesGateway(),
-        getMovieDetailsGateway: MockedMovieDetailsGateway()
-    )
+    static let mock: MoviesListFeatureEnvironment = {
+        let favoriteMoviesGateway = MockedFavoriteMovieGateway()
+        return .init(
+            mainQueue: .main,
+            getPopularMoviesGateway: MockedGetPopularMoviesGateway(),
+            getMovieDetailsGateway: MockedMovieDetailsGateway(),
+            saveFavoriteMovieGateway: favoriteMoviesGateway,
+            getFavoriteMoviesGateway: favoriteMoviesGateway,
+            deleteFavoriteMovieGateway: favoriteMoviesGateway,
+            checkMovieIsFavoriteGateway: favoriteMoviesGateway
+        )
+    }()
 }
 
 class MockedGetPopularMoviesGateway: GetPopularMoviesGateway {
@@ -37,6 +44,31 @@ struct MockedMovieDetailsGateway: GetMovieDetailsGateway {
     
     func get(movie: Domain.MovieDetails.Get) async throws -> Domain.MovieDetails {
         try await Task.sleep(nanoseconds: 500_000_000)
-        return .init(id: movie.id, title: "", overview: "", rating: 0, duration: 0, releaseDate: nil, posterURL: bladeRunnerPoster, genres: [])
+        return .init(id: movie.id, title: "Blade runner", overview: "", rating: 0, duration: 0, releaseDate: nil, posterURL: bladeRunnerPoster, genres: [])
+    }
+}
+
+class MockedFavoriteMovieGateway: SaveFavoriteMovieGateway, GetFavoriteMoviesGateway,
+                                  DeleteFavoriteMovieGateway, CheckMovieIsFavoriteGateway {
+    var movies = [FavoriteMovie]()
+    
+    func save(movie: FavoriteMovie) async throws {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        movies.append(movie)
+    }
+    
+    func get() async throws -> [FavoriteMovie] {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        return movies
+    }
+    
+    func delete(movie: FavoriteMovie.Delete) async throws {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        movies.removeAll(where: { $0.id == movie.id })
+    }
+    
+    func isFavorite(movie: FavoriteMovie.IsFavorite) async throws -> Bool {
+        try await Task.sleep(nanoseconds: 500_000_000)
+        return movies.contains(where: { $0.id == movie.id })
     }
 }
