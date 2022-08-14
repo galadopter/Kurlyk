@@ -19,7 +19,9 @@ struct KurlykApp: App {
                     reducer: appReducer,
                     environment: .live
                 )
-            )
+            ).onAppear {
+                InitialSetup.run()
+            }
         }
     }
 }

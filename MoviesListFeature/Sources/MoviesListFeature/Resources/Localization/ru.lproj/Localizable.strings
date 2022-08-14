@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Kurlyk
+
+  Created by Yan Schneider on 30/05/2022.
+  
+*/
+
+/* Tab View */
+
+"tabView.moviesList.title" = "Movies List";
+"tabView.favoriteMovies.title" = "Favorite Movies";
+
+/* Movies List */
+
+"moviesList.navigationTitle" = "MOVIESLIST";
+
+/* Movie details */
+
+"movieDetails.overview.title" = "Информация";
+"movieDetails.favoriteButton.on.title" = "Добавить в избранное";
+"movieDetails.favoriteButton.off.title" = "Избранное";
+
+/* Favorite movies */
+
+"favoriteMovies.navigationTitle" = "Favorites";
+
+/* Other */
+
+"errors.generic" = "Что-то пошло не так!";

@@ -20,7 +20,7 @@ public struct GetUserUseCase {
 }
 
 // MARK: - AsyncThrowableUseCaseType
-extension GetUserUseCase: AsyncThrowableUseCaseType {
+extension GetUserUseCase: AsyncThrowingUseCaseType {
     
     public func execute(input: User.Get) async throws -> User {
         try await gateway.get(user: input)

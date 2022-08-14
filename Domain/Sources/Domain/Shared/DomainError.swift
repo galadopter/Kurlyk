@@ -7,6 +7,6 @@
 
 import Foundation
 
-public enum DomainError: Error, Equatable {
-    
+public enum DomainError: Error, Equatable, Hashable {
+    case generic
 }

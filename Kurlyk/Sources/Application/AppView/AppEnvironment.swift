@@ -7,18 +7,21 @@
 
 import Domain
 import AuthenticationFeature
+import MoviesListFeature
 import ComposableArchitecture
 
 struct AppEnvironment {
     var mainQueue: AnySchedulerOf<DispatchQueue>
 }
 
+// MARK: - Nested Environments
 extension AppEnvironment {
-    static let live = AppEnvironment(
-        mainQueue: .main
-    )
     
     var authentication: AuthenticationEnvironment {
         .mock
+    }
+    
+    var moviesList: MoviesListFeatureEnvironment {
+        .live
     }
 }

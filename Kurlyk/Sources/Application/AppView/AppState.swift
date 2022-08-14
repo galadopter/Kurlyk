@@ -7,9 +7,11 @@
 
 import Foundation
 import AuthenticationFeature
+import MoviesListFeature
 
 enum AppState: Equatable {
     case authentication(AuthenticationState)
+    case moviesList(MoviesListFeatureState)
     
-    init() { self = .authentication(.init()) }
+    init() { self = .moviesList(.init()) }
 }

@@ -1,0 +1,7 @@
+input_dir: ${INPUT_DIR}
+output_dir: ${OUTPUT_DIR}
+strings:
+  inputs: Localization/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift

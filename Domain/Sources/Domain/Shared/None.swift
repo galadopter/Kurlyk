@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct None: Equatable {
+public struct None: Equatable, Hashable {
     public init() {}
 }

@@ -41,9 +41,11 @@ private extension DefaultThemeProvider {
             text: .init(
                 primary: .init(rgb: 0x212121),
                 secondary: .init(rgb: 0xffffff),
+                title: .init(rgb: 0xfcd052),
                 placeholder: .init(rgb: 0x7f7f7f)
             ),
             navigation: .init(rgb: 0xf1f1f1),
+            accessory: .init(rgb: 0xffffff),
             background: .init(rgb: 0x212121)
         )
     }

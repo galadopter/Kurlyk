@@ -13,7 +13,6 @@ import ComposableArchitecture
 public struct LoginState: Equatable {
     @BindableState var email = ""
     @BindableState var password = ""
-    @BindableState var hasLoggedIn = false
     
     var isFormValid = false
     var isLoading = false
@@ -25,6 +24,7 @@ public enum LoginAction: BindableAction, Equatable {
     case login
     case alertDismissed
     case loginResult(Result<None, DomainError>)
+    case loginSucceeded
 }
 
 private let loginValidator = ValidateEntityUseCase<LoginState> { user in
@@ -42,7 +42,7 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         
     case .login:
         if !state.isFormValid {
-            state.errorAlert = errorAlert(message: "Check your data")
+            state.errorAlert = errorAlert(message: L10n.Errors.Login.failedResponse)
             return .none
         }
         
@@ -50,11 +50,12 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         let user = User.Get(email: state.email, password: state.password)
         state.isLoading = true
 
-        return Effect<Void, DomainError>.task {
+        return Effect<Void, Error>.task {
             _ = try await userGetter.execute(input: user)
         }
         .receive(on: environment.mainQueue)
         .mapToNone()
+        .mapError { _ in DomainError.generic }
         .catchToEffect(LoginAction.loginResult)
         
     case .loginResult(let result):
@@ -62,13 +63,18 @@ var loginReducer = Reducer<LoginState, LoginAction, AuthenticationEnvironment> {
         
         switch result {
         case .success:
-            state.hasLoggedIn = true
-        case .failure:
-            state.errorAlert = errorAlert(message: "Login failed!")
+            return .init(value: .loginSucceeded)
+        case .failure(let error):
+            state.errorAlert = errorAlert(message: L10n.Errors.Login.failedResponse)
+            return .none
         }
-        return .none
         
     case .alertDismissed:
+        state.errorAlert = nil
+        return .none
+        
+    case .loginSucceeded:
+        // Final event. It's tracked in AuthenticationCore.
         return .none
     }
 }.binding()

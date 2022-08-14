@@ -7,7 +7,9 @@
 
 import Foundation
 import AuthenticationFeature
+import MoviesListFeature
 
 enum AppAction: Equatable {
     case authentication(AuthenticationAction)
+    case moviesList(MoviesListFeatureAction)
 }

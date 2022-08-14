@@ -14,8 +14,13 @@
 		6DFDD2DE478DE20B5D328361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98090A62B4549770E0245C4 /* Assets.xcassets */; };
 		74A3670698CEDBCDC7C37CDA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */; };
 		7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0AF9D0AE475493B8E2C36 /* AppView.swift */; };
+		987A3370284A4A530012BEF7 /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 987A336F284A4A530012BEF7 /* AuthenticationFeature */; };
+		98BEAD59284555AC008ED1A1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98BEAD5B284555AC008ED1A1 /* Localizable.strings */; };
+		98CA405428A6724F0036D7C0 /* LiveServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA405328A6724F0036D7C0 /* LiveServices.swift */; };
+		98DE48FD28A1B611004CCD54 /* MoviesListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 98DE48FC28A1B611004CCD54 /* MoviesListFeature */; };
+		98E51DFC281B311200016867 /* MoviesListAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 98E51DFB281B311200016867 /* MoviesListAPI */; };
+		98E51DFE281B3AFB00016867 /* InitialSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E51DFD281B3AFB00016867 /* InitialSetup.swift */; };
 		9F231F55BA9A8C9ADE3EE362 /* KurlykTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F2E92BC7A6AAFED67E9FF /* KurlykTests.swift */; };
-		AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */; };
 		BB6647B93731DE66E59A47C0 /* KurlykApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126799005F7427F5A5A26D0 /* KurlykApp.swift */; };
 		E7FDA1C0A68C235CCF0B5E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C4D035169E50D1216CBDA7 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -43,6 +48,14 @@
 		7AC0AF9D0AE475493B8E2C36 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8126799005F7427F5A5A26D0 /* KurlykApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KurlykApp.swift; sourceTree = "<group>"; };
 		97680F117FC4940C62BAEBFB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		988F196B281ABA5200BF883E /* NetworkKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkKit; sourceTree = "<group>"; };
+		98AECF0A280ED79900ADBF6E /* MoviesListFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListFeature; sourceTree = "<group>"; };
+		98BEAD5A284555AC008ED1A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		98BEAD5C284555AE008ED1A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		98CA405328A6724F0036D7C0 /* LiveServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveServices.swift; sourceTree = "<group>"; };
+		98DE48F728A14A36004CCD54 /* SwiftGenPlugin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftGenPlugin; sourceTree = "<group>"; };
+		98E51DFA281B2AB700016867 /* MoviesListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListAPI; sourceTree = "<group>"; };
+		98E51DFD281B3AFB00016867 /* InitialSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetup.swift; sourceTree = "<group>"; };
 		9F31C209F7E53CBB368860BB /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B07572FFB0F57DD3A7E3B97B /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ComponentsKit; sourceTree = SOURCE_ROOT; };
 		B6256A629A02FAD982FCB575 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -57,7 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA4458299E56D1AFE498689E /* AuthenticationFeature in Frameworks */,
+				98E51DFC281B311200016867 /* MoviesListAPI in Frameworks */,
+				98DE48FD28A1B611004CCD54 /* MoviesListFeature in Frameworks */,
+				987A3370284A4A530012BEF7 /* AuthenticationFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,7 @@
 				9F31C209F7E53CBB368860BB /* AppReducer.swift */,
 				B6256A629A02FAD982FCB575 /* AppState.swift */,
 				7AC0AF9D0AE475493B8E2C36 /* AppView.swift */,
+				98CA405328A6724F0036D7C0 /* LiveServices.swift */,
 			);
 			path = AppView;
 			sourceTree = "<group>";
@@ -109,6 +125,7 @@
 				12C159DFC20751D57E99B40A /* Info.plist */,
 				8126799005F7427F5A5A26D0 /* KurlykApp.swift */,
 				3095223C6F9F72575CEA8941 /* AppView */,
+				98E51DFD281B3AFB00016867 /* InitialSetup.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -116,10 +133,10 @@
 		48B72D4BF29F7FF2C9AF2810 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				036CEDDB5CDA84343D3543CC /* AuthenticationFeature */,
-				B07572FFB0F57DD3A7E3B97B /* ComponentsKit */,
-				1744F60E1DBB63379974E937 /* DesignSystem */,
-				74DF538F7E70208FECF68F75 /* Domain */,
+				98DE48FB28A16919004CCD54 /* Common */,
+				98DE48FA28A16903004CCD54 /* API */,
+				98DE48F928A168F5004CCD54 /* Features */,
+				98DE48F828A168EA004CCD54 /* Plugins */,
 			);
 			name = Packages;
 			sourceTree = SOURCE_ROOT;
@@ -147,6 +164,42 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		98DE48F828A168EA004CCD54 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				98DE48F728A14A36004CCD54 /* SwiftGenPlugin */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		98DE48F928A168F5004CCD54 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				98AECF0A280ED79900ADBF6E /* MoviesListFeature */,
+				036CEDDB5CDA84343D3543CC /* AuthenticationFeature */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		98DE48FA28A16903004CCD54 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				98E51DFA281B2AB700016867 /* MoviesListAPI */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		98DE48FB28A16919004CCD54 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				988F196B281ABA5200BF883E /* NetworkKit */,
+				B07572FFB0F57DD3A7E3B97B /* ComponentsKit */,
+				1744F60E1DBB63379974E937 /* DesignSystem */,
+				74DF538F7E70208FECF68F75 /* Domain */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		99DA93C5594A266CCFDD0365 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				D98090A62B4549770E0245C4 /* Assets.xcassets */,
+				98BEAD5B284555AC008ED1A1 /* Localizable.strings */,
 				2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */,
 				9298348C732C68BCB7B56CAD /* Preview Content */,
 			);
@@ -202,7 +256,9 @@
 			);
 			name = Kurlyk;
 			packageProductDependencies = (
-				005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */,
+				98E51DFB281B311200016867 /* MoviesListAPI */,
+				987A336F284A4A530012BEF7 /* AuthenticationFeature */,
+				98DE48FC28A1B611004CCD54 /* MoviesListFeature */,
 			);
 			productName = Kurlyk;
 			productReference = 3907E3E09A18B39836D36B3E /* Kurlyk.app */;
@@ -214,7 +270,7 @@
 		3739C1908CA6CBC8381E56E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					F500988C44A57EE19D8678F8 = {
 						DevelopmentTeam = YA3F4FB73R;
@@ -231,6 +287,7 @@
 			knownRegions = (
 				Base,
 				en,
+				ru,
 			);
 			mainGroup = 99DA93C5594A266CCFDD0365;
 			packageReferences = (
@@ -251,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DFDD2DE478DE20B5D328361 /* Assets.xcassets in Resources */,
+				98BEAD59284555AC008ED1A1 /* Localizable.strings in Resources */,
 				74A3670698CEDBCDC7C37CDA /* Launch Screen.storyboard in Resources */,
 				E7FDA1C0A68C235CCF0B5E12 /* Preview Assets.xcassets in Resources */,
 			);
@@ -272,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				684098D773CC8396139D79C3 /* AppAction.swift in Sources */,
+				98CA405428A6724F0036D7C0 /* LiveServices.swift in Sources */,
 				3323BFA01FC63338C94D561C /* AppEnvironment.swift in Sources */,
+				98E51DFE281B3AFB00016867 /* InitialSetup.swift in Sources */,
 				335CF55F3EEC255A4EA68DA7 /* AppReducer.swift in Sources */,
 				0FFFA5E0764505AD8008B11E /* AppState.swift in Sources */,
 				7BF8FD5039608FFDDFF85778 /* AppView.swift in Sources */,
@@ -289,6 +349,18 @@
 			targetProxy = 3F20802CBBCBB59DD696838A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		98BEAD5B284555AC008ED1A1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98BEAD5A284555AC008ED1A1 /* en */,
+				98BEAD5C284555AE008ED1A1 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0FDB620286FB2309015C9AFA /* Debug */ = {
@@ -313,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -420,6 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -524,9 +598,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		005CC9DFC7CE7CEC21F83791 /* AuthenticationFeature */ = {
+		987A336F284A4A530012BEF7 /* AuthenticationFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AuthenticationFeature;
+		};
+		98DE48FC28A1B611004CCD54 /* MoviesListFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesListFeature;
+		};
+		98E51DFB281B311200016867 /* MoviesListAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MoviesListAPI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

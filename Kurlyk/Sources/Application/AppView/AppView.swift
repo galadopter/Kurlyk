@@ -8,6 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 import AuthenticationFeature
+import MoviesListFeature
 
 struct AppView: View {
     
@@ -19,6 +20,11 @@ struct AppView: View {
                 state: /AppState.authentication,
                 action: AppAction.authentication,
                 then: AuthenticationFeature.AuthenticationView.init(store:)
+            )
+            CaseLet(
+                state: /AppState.moviesList,
+                action: AppAction.moviesList,
+                then: MoviesListFeature.MoviesListFeatureView.init(store:)
             )
         }
     }
