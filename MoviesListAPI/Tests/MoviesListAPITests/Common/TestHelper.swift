@@ -9,7 +9,11 @@ import Foundation
 
 @testable import MoviesListAPI
 
-struct Mocks {
+struct GenericModel: Codable, Equatable {
+    let testField: Int
+}
+
+enum Mocks {
     
     static func moviesResponse(
         id: UInt = 0,

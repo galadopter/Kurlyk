@@ -20,7 +20,8 @@ let package = Package(
         .package(path: "../Domain"),
         .package(path: "../ComponentsKit"),
         .package(path: "../SwiftGenPlugin"),
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.39.0")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.39.0"),
+        .package(url: "https://github.com/Quick/Nimble", from: "9.2.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -45,6 +46,7 @@ let package = Package(
             name: "MoviesListFeatureTests",
             dependencies: [
                 "MoviesListFeature",
+                "Nimble",
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
             ]),
     ]

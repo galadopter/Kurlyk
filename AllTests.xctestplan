@@ -57,6 +57,20 @@
         "identifier" : "MoviesListFeatureTests",
         "name" : "MoviesListFeatureTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:MoviesListAPI",
+        "identifier" : "MoviesListAPITests",
+        "name" : "MoviesListAPITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:NetworkKit",
+        "identifier" : "NetworkKitTests",
+        "name" : "NetworkKitTests"
+      }
     }
   ],
   "version" : 1

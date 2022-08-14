@@ -1,10 +1,23 @@
 import XCTest
+import ComposableArchitecture
+
 @testable import MoviesListFeature
 
 final class MoviesListFeatureTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
+    
+    func testShouldChangeState_whenNewPageSelected() throws {
+        let store = TestStore(
+            initialState: .init(),
+            reducer: moviesListFeatureReducer,
+            environment: .mock
+        )
+        
+        store.send(.set(\.$currentTab, .favoriteMovies)) {
+            $0.currentTab = .favoriteMovies
+        }
+        
+        store.send(.set(\.$currentTab, .moviesList)) {
+            $0.currentTab = .moviesList
+        }
     }
 }

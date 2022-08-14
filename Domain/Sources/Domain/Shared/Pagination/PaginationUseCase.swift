@@ -36,6 +36,11 @@ extension PaginationUseCase: AsyncThrowingUseCaseType {
         public let pagination: PaginationCounter
         /// Result for a given page.
         public let result: T
+        
+        public init(pagination: PaginationCounter, result: T) {
+            self.pagination = pagination
+            self.result = result
+        }
     }
     
     /// Performs a pagination task.

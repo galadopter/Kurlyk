@@ -26,7 +26,7 @@ public enum MovieDetailsAction: Equatable {
     case loadDetails
     case receivedDetails(Result<MovieDetails, DomainError>)
     case receivedFavoriteResult(Result<None, DomainError>)
-    case favoriteButtonPressed
+    case changeFavoriteStatus
     case alertDismissed
 }
 
@@ -63,7 +63,7 @@ let movieDetailsReducer = Reducer<MovieDetailsState, MovieDetailsAction, MoviesL
             
             return .none
         
-        case .favoriteButtonPressed:
+        case .changeFavoriteStatus:
             guard let movie = state.movieDetails else {
                 return .none
             }

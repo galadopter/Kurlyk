@@ -7,6 +7,7 @@
 
 import XCTest
 import Nimble
+import Domain
 
 @testable import NetworkKit
 

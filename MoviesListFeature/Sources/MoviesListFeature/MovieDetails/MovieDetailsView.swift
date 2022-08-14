@@ -32,7 +32,7 @@ extension MovieDetailsView: View {
                     movie: movie,
                     isPerformingLoadingAction: viewStore.isPerformingFavoriteAction
                 ) {
-                    viewStore.send(.favoriteButtonPressed)
+                    viewStore.send(.changeFavoriteStatus)
                 }.animation(.default, value: viewStore.isPerformingFavoriteAction)
             } else {
                 loader

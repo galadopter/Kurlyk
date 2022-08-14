@@ -55,7 +55,7 @@ class MoviesServiceTests: XCTestCase {
         expect(response.page).to(equal(1))
         expect(response.movies).to(haveCount(20))
         expect(response.movies.first?.title).to(equal("Suicide Squad"))
-        expect(response.movies.first?.rating).to(equal(5.91))
+        expect(response.movies.first?.rating).to(equal(0.591))
         expect(response.movies.first?.overview.isEmpty).to(beFalse())
     }
     
@@ -69,7 +69,7 @@ class MoviesServiceTests: XCTestCase {
         
         expect(response.id).to(equal("550"))
         expect(response.title).to(equal("Fight Club"))
-        expect(response.rating).to(equal(7.8))
+        expect(response.rating).to(equal(0.78))
         expect(response.duration).to(equal(139))
         expect(response.genres).to(equal([.init(name: "Drama")]))
         expect(response.overview.isEmpty).to(beFalse())
