@@ -8,8 +8,8 @@
 
 /* Tab View */
 
-"tabView.moviesList.title" = "Movies List";
-"tabView.favoriteMovies.title" = "Favorite Movies";
+"tabView.moviesList.title" = "Список фильмов";
+"tabView.favoriteMovies.title" = "Избранное";
 
 /* Movies List */
 
