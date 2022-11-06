@@ -20,7 +20,6 @@ extension RequestBuilder {
     
     func build() -> URLRequest? {
         guard let url = makeURL() else { return nil }
-        
         var request = URLRequest(url: url)
         request.httpMethod = api.method.value
         request.allHTTPHeaderFields = api.headers
