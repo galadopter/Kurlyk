@@ -9,34 +9,50 @@ import Foundation
 import Domain
 
 /// Holds favorite movies in the memory
-class InMemoryFavoriteMoviesStore {
+actor InMemoryFavoriteMoviesStore {
     
-    private var movies: [FavoriteMovie]
+    private var movies: [String: FavoriteMovie]
     
     init(initialValue movies: [FavoriteMovie] = []) {
-        self.movies = movies
+        var newMovies = [String: FavoriteMovie]()
+        for movie in movies {
+            newMovies[movie.id] = movie
+        }
+        self.movies = newMovies
     }
     
     /// Singletone version of store
     static let shared = InMemoryFavoriteMoviesStore()
 }
 
-// MARK: - FavoriteMoviesStore
-extension InMemoryFavoriteMoviesStore: FavoriteMoviesStore {
+// MARK: - GetFavoriteMoviesGateway
+extension InMemoryFavoriteMoviesStore: GetFavoriteMoviesGateway {
     
     func get() async throws -> [FavoriteMovie] {
-        movies
+        movies.map { $0.value }
     }
+}
+
+// MARK: - DeleteFavoriteMovieGateway
+extension InMemoryFavoriteMoviesStore: DeleteFavoriteMovieGateway {
     
     func save(movie: FavoriteMovie) async throws {
-        movies.append(movie)
+        movies[movie.id] = movie
     }
+}
+
+// MARK: - DeleteFavoriteMovieGateway
+extension InMemoryFavoriteMoviesStore: SaveFavoriteMovieGateway {
     
     func delete(movie: FavoriteMovie.Delete) async throws {
-        movies.removeAll(where: { $0.id == movie.id })
+        movies[movie.id] = nil
     }
+}
+
+// MARK: - DeleteFavoriteMovieGateway
+extension InMemoryFavoriteMoviesStore: CheckMovieIsFavoriteGateway {
     
     func isFavorite(movie: FavoriteMovie.IsFavorite) async throws -> Bool {
-        movies.contains(where: { $0.id == movie.id })
+        movies[movie.id] != nil
     }
 }

@@ -24,7 +24,7 @@ extension MoviesListFeatureEnvironment {
     
     static let live: MoviesListFeatureEnvironment = {
         let service = MoviesService()
-        let store = FavoriteMoviesStoreFabric.provide()
+        let store = FavoriteMoviesStoreFabric.provide(store: .fileStorage)
         
         return .init(
            mainQueue: .main,

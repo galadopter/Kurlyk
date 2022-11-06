@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 public struct FavoriteMoviesStoreFabric {
     
@@ -13,6 +14,8 @@ public struct FavoriteMoviesStoreFabric {
     public enum Store {
         /// Store that handles everything in memory. The scope determines how long should the memory live.
         case memory(scope: MemoryStoreScope)
+        
+        case fileStorage
         
         /// Scopes of Memory Store
         public enum MemoryStoreScope {
@@ -24,17 +27,21 @@ public struct FavoriteMoviesStoreFabric {
         }
     }
     
+    public typealias FavoriteMoviesStore = GetFavoriteMoviesGateway & DeleteFavoriteMovieGateway & SaveFavoriteMovieGateway & CheckMovieIsFavoriteGateway
+    
     /// Providing the requested store.
     ///
     /// - Parameter store: Specific store to be provided. Default to `memory`.
     ///
     /// - Returns: Instance of `FavoriteMoviesStore`.
-    public static func provide(store: Store = .memory(scope: .shortTerm)) -> FavoriteMoviesStore {
+    public static func provide(store: Store = .memory(scope: .shortTerm)) -> any FavoriteMoviesStore {
         switch store {
         case .memory(.shortTerm):
             return InMemoryFavoriteMoviesStore()
         case .memory(scope: .appLifecycle):
             return InMemoryFavoriteMoviesStore.shared
+        case .fileStorage:
+            return FileFavoriteMoviesStore()
         }
     }
 }

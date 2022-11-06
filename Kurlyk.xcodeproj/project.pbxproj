@@ -41,7 +41,7 @@
 		1744F60E1DBB63379974E937 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DesignSystem; sourceTree = SOURCE_ROOT; };
 		2B07BF904A56F4EEEB4DE9CA /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
 		2B36F7219A9475EB1E3624C5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		3907E3E09A18B39836D36B3E /* Kurlyk.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kurlyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3907E3E09A18B39836D36B3E /* Kurlyk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurlyk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BC24398EB29B8BF6312848 /* AllTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllTests.xctestplan; sourceTree = "<group>"; };
 		74658F2B73716E4BE177CA4A /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		74DF538F7E70208FECF68F75 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = SOURCE_ROOT; };
@@ -52,6 +52,7 @@
 		98AECF0A280ED79900ADBF6E /* MoviesListFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListFeature; sourceTree = "<group>"; };
 		98BEAD5A284555AC008ED1A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98BEAD5C284555AE008ED1A1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		98C60A812915759100D6E93C /* PersistenceKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PersistenceKit; sourceTree = "<group>"; };
 		98CA405328A6724F0036D7C0 /* LiveServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveServices.swift; sourceTree = "<group>"; };
 		98DE48F728A14A36004CCD54 /* SwiftGenPlugin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftGenPlugin; sourceTree = "<group>"; };
 		98E51DFA281B2AB700016867 /* MoviesListAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MoviesListAPI; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		98DE48FB28A16919004CCD54 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				98C60A812915759100D6E93C /* PersistenceKit */,
 				988F196B281ABA5200BF883E /* NetworkKit */,
 				B07572FFB0F57DD3A7E3B97B /* ComponentsKit */,
 				1744F60E1DBB63379974E937 /* DesignSystem */,
@@ -371,6 +373,7 @@
 				BUNDLE_VERSION = 0;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Kurlyk/Sources/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +450,7 @@
 				BUNDLE_VERSION = 0;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Kurlyk/Sources/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
